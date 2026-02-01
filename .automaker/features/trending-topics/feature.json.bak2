@@ -1,0 +1,12 @@
+{
+  "id": "trending-topics",
+  "category": "UI",
+  "title": "Trending Topics Discovery",
+  "description": "Display trending topics across all users to help discover new topics to monitor. Shows topic popularity and recent activity.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.803Z",
+  "updatedAt": "2026-01-31T11:46:37.771Z",
+  "descriptionHistory": []
+}

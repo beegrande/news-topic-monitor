@@ -1,0 +1,15 @@
+{
+  "id": "competitor-monitoring",
+  "category": "Core",
+  "title": "Competitor Monitoring Mode",
+  "description": "Specialized monitoring mode focused on tracking competitor mentions, product launches, and company news with dedicated UI.",
+  "status": "backlog",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "article-storage-schema"
+  ],
+  "createdAt": "2026-01-30T17:38:35.810Z",
+  "updatedAt": "2026-01-30T17:38:35.810Z",
+  "descriptionHistory": []
+}

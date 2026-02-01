@@ -1,0 +1,14 @@
+{
+  "id": "social-media-integration",
+  "category": "API",
+  "title": "Social Media Source Integration",
+  "description": "Extend monitoring to social media platforms (Twitter, Reddit, LinkedIn) in addition to traditional news sources.",
+  "status": "backlog",
+  "priority": 2,
+  "complexity": "complex",
+  "dependencies": [
+    "news-source-integration"
+  ],
+  "createdAt": "2026-01-30T17:38:35.811Z",
+  "updatedAt": "2026-01-30T17:38:35.811Z"
+}

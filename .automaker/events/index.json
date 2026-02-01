@@ -1,0 +1,2781 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "evt-1769864327398-13d1be29",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-01-31T12:58:47.398Z"
+    },
+    {
+      "id": "evt-1769864325303-db7839ef",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T12:58:45.303Z",
+      "featureName": "Webhook Notifications",
+      "featureId": "webhook-integration"
+    },
+    {
+      "id": "evt-1769863871171-8c581556",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T12:51:11.171Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769863497658-3179a6a1",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T12:44:57.658Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859998885-585aa6c4",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:38.885Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859997775-b566a54c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:37.775Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859994884-ef02a63b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:34.884Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859992784-4e426000",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:32.784Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859990648-8fafb598",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:30.648Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859988556-e1b8133c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:28.556Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859986422-70306651",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:26.422Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859984430-5013d10d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:24.430Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859982686-249eb001",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:22.686Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859980320-7c78c71d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:20.320Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859978193-e3448731",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:18.193Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859976567-0902d5a5",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:16.567Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859974524-30e422bf",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:14.524Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859973401-81aa558d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:13.401Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859971086-536c29d0",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:11.086Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859968179-72bdecfd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:08.179Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859966009-a6b252bd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:06.009Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859963949-f6ee2495",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:03.949Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859961728-47c4cd39",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:01.728Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859960081-70a72b6d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:46:00.081Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859957845-8fab5d8c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:45:57.845Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859929089-5df7961e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:45:29.089Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859928316-ca47862e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:45:28.316Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859011590-c2d1ceed",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:30:11.590Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859009904-03cf74c8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:30:09.904Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859008118-8e4acae8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:30:08.118Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859005643-fe0318b9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:30:05.643Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769859003340-b9fcdee5",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:30:03.340Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769859001628-721904b3",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:30:01.628Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858999545-2b7a17ff",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:59.545Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858997111-0a453695",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:57.111Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858995282-5499eaa8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:55.282Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858993415-35fe83a9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:53.415Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858990929-671a9d57",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:50.929Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858989039-c471c08d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:49.039Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858987393-2f56f54a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:47.393Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858985067-8f4d80ef",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:45.067Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858982748-d383a9f8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:42.748Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858980688-daeaa4f8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:40.688Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858978663-a3d16424",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:38.663Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858976695-ef2651f7",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:36.695Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858974570-f09844ab",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:34.570Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858973357-585f2211",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:33.357Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858970654-0fd4d289",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:30.654Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858968457-13527425",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:28.457Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858966275-2a2f1e3e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:26.275Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858964230-3c14b285",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:24.230Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858962680-173fc3a8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:22.680Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858960092-d0eb142a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:20.092Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858958366-e7af3c7b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:18.366Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858956961-8770e81d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:16.961Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858954133-bbf3aac2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:14.133Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858952228-c129d899",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:12.228Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858950091-53516f3e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:10.091Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858947835-cff5c376",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:07.835Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858946031-3ad9c539",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:06.031Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858943748-62b4de13",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:03.748Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858941443-9d163745",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:29:01.443Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858939945-f9a29a4d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:59.945Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858937678-303e820a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:57.678Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858935259-4fafd23c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:55.259Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858933371-3be2b584",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:53.371Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858931640-a48d833a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:51.640Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858929437-1631622b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:49.437Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858927210-da5c611f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:47.211Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858925407-49e5fff3",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:45.407Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858923190-5a5413cd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:43.190Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858921237-50079ce8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:41.237Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858919157-78329877",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:39.157Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858916878-eec07a0a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:36.878Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858915214-662a201d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:35.214Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858912918-46bc6386",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:32.918Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858911228-c79c46cb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:31.228Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858908932-e39995cd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:28.932Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858906629-2d17dc0f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:26.629Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858904652-e960c1cb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:24.652Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858897912-23000a77",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:17.912Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769858897355-7fb90bd5",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:17.355Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769858889894-5cea6ace",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:28:09.894Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857963001-435c1f04",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:43.001Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857956416-29ab0e35",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:36.416Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857948874-11de3efa",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:28.874Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857944635-3febcaf2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:24.635Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857943538-cdd96acd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:23.538Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857940888-ec44f6e1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:20.888Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857938721-70938937",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:18.721Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857936464-bfe72886",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:16.464Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857935111-10b0a36f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:15.111Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857932378-da56487a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:12.378Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857930600-dc4e6a23",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:10.600Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857924458-b2844fa8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:04.458Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857922520-a178a64e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:12:02.520Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857917007-8eca7092",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:57.007Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857915190-eefb6c63",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:55.190Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857913168-b4cf3430",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:53.168Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857910908-d2105ac1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:50.908Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857908804-ab92e67f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:48.804Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857906900-04390750",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:46.900Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857899561-e6ae779d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:39.561Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857899508-d8168598",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:39.508Z",
+      "featureName": "Trending Topics Discovery",
+      "featureId": "trending-topics"
+    },
+    {
+      "id": "evt-1769857893415-389e5ce4",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:33.415Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857885823-9f2c61dc",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:25.823Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769857882269-8e0c049e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-31T11:11:22.269Z",
+      "featureName": "Topic Monitoring Schedules",
+      "featureId": "topic-scheduling"
+    },
+    {
+      "id": "evt-1769851719338-a18b571b",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T09:28:39.338Z",
+      "featureName": "Hierarchical Topics",
+      "featureId": "topic-hierarchy"
+    },
+    {
+      "id": "evt-1769851668430-903c7682",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T09:27:48.430Z",
+      "featureName": "Topic Configuration Import/Export",
+      "featureId": "topic-import-export"
+    },
+    {
+      "id": "evt-1769849810537-1725bbac",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:56:50.537Z",
+      "featureName": "News Source Credibility Ratings",
+      "featureId": "source-credibility-scoring"
+    },
+    {
+      "id": "evt-1769849293596-f8822064",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:48:13.596Z",
+      "featureName": "Add REST API for trending topic exposure",
+      "featureId": "feature-1769849149415-tq18hizeh"
+    },
+    {
+      "id": "evt-1769849174448-f7d24739",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:46:14.448Z",
+      "featureName": "Saved Search Queries",
+      "featureId": "saved-searches"
+    },
+    {
+      "id": "evt-1769849149535-c74327f6",
+      "trigger": "feature_created",
+      "timestamp": "2026-01-31T08:45:49.535Z",
+      "featureId": "feature-1769849149415-tq18hizeh"
+    },
+    {
+      "id": "evt-1769848740451-6dc98946",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:39:00.451Z",
+      "featureName": "Personal RSS Feed Generation",
+      "featureId": "rss-feed-generation"
+    },
+    {
+      "id": "evt-1769848402096-bc33b8d9",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:33:22.096Z",
+      "featureName": "Multi-language Article Support",
+      "featureId": "multi-language-support"
+    },
+    {
+      "id": "evt-1769848091677-d7c83565",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:28:11.677Z",
+      "featureName": "Geographic Article Filtering",
+      "featureId": "geo-filtering"
+    },
+    {
+      "id": "evt-1769847561134-4295f4c0",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:19:21.134Z",
+      "featureName": "Article Export",
+      "featureId": "export-functionality"
+    },
+    {
+      "id": "evt-1769847456276-888689bd",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:17:36.276Z",
+      "featureName": "AI-Powered Article Recommendations",
+      "featureId": "article-recommendations"
+    },
+    {
+      "id": "evt-1769847169333-7d795c71",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:12:49.333Z",
+      "featureName": "Custom Article Tagging",
+      "featureId": "article-tagging"
+    },
+    {
+      "id": "evt-1769847028893-3babd4d6",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:10:28.893Z",
+      "featureName": "Distraction-free Reader Mode",
+      "featureId": "article-reader-mode"
+    },
+    {
+      "id": "evt-1769847002108-35a26ba4",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:10:02.108Z",
+      "featureName": "Estimated Reading Time",
+      "featureId": "article-reading-time"
+    },
+    {
+      "id": "evt-1769846670465-c39c74b8",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:04:30.465Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769846495520-edd767c6",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T08:01:35.520Z",
+      "featureName": "Article Text Highlighting",
+      "featureId": "article-highlights"
+    },
+    {
+      "id": "evt-1769846363214-e117f741",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-31T07:59:23.214Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809311744-1c1f667f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:51.745Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809310863-3cea8a68",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:50.863Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809298075-f4cfe21e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:38.075Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809290823-e90804af",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:30.823Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809284513-253619fb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:24.513Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809280063-e4e55721",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:20.063Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809278028-13fa2a1a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:18.028Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809275954-59270f4c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:15.954Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809273626-3f0235fc",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:13.626Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809272048-86618b4c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:12.048Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809269830-88dc33f8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:09.830Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809267811-9cf08c6c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:07.811Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809265950-60c89748",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:05.950Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809263260-a7c18dbb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:03.260Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809260778-77954f26",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:41:00.778Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809258497-2e9d8ac9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:58.498Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809256725-b7dbfc92",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:56.725Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809254502-b7b0408e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:54.502Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809252376-f6e8dfb1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:52.376Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809250490-c159162e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:50.490Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809248178-e4d33bd9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:48.178Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809246854-803dabcd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:46.854Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809244157-d828eaeb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:44.157Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809242041-d25b371f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:42.041Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809240049-3359b799",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:40.049Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809238319-d9c0bf38",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:38.319Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809236154-7dd97850",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:36.154Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809233676-9134977f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:33.676Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809231768-df61a830",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:31.768Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809229780-6edcdd64",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:29.780Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809227460-bfc63cdd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:27.460Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809225227-68439a66",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:25.227Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809223057-f425ac55",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:23.057Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809221536-429f54d0",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:21.536Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809219247-dc7b724e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:19.247Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809216925-3aeac56b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:16.925Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809214849-36cef4ef",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:14.849Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809212777-b2f0ab2e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:12.777Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809211182-1b884151",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:11.182Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809208366-a1532fb1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:08.366Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809204498-8f349e39",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:04.498Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809203619-119288eb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:40:03.619Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809198536-0a76d415",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:58.536Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809195292-1118292a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:55.292Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809193385-a6305305",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:53.385Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809186936-0b67854c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:46.936Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809186016-d1b73c03",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:46.016Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809178665-5ffbc987",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:38.665Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809174821-a22f6479",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:34.821Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809173079-ab274a61",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:33.079Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809170473-f4b4df72",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:30.473Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809168786-37448107",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:28.786Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809166550-a89ca470",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:26.550Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809164278-b8d37acd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:24.278Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809162346-1ba8871c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:22.346Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809160377-68b2855b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:20.377Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809158260-9d181861",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:18.260Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809156332-f48689fb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:16.332Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809154046-39b032cc",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:14.046Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809151450-d588fb1b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:11.450Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809146722-a134626e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:39:06.722Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809139890-7d5725eb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:59.890Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809132357-c9f81f81",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:52.357Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809125397-0c51e20c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:45.397Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809121958-7092bd1b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:41.958Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809119542-4974fb72",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:39.542Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809117077-ecb0632e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:37.077Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809114945-ec8b0a20",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:34.945Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809112880-4cdb2200",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:32.880Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809110877-a91c4c05",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:30.877Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809108857-26a59a98",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:28.857Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809106741-2a4f88fa",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:26.741Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809104684-04b9b6c3",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:24.684Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809102614-3a460918",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:22.614Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809101385-d37c25eb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:21.385Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809098848-e44b9b73",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:18.848Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809096211-ff74a5a3",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:16.211Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809094167-c7de7266",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:14.167Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809092195-0b794f8f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:12.195Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809089873-9cd63bb1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:09.873Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809088664-1bd59e29",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:08.664Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809086035-78d65c1f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:06.035Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809083814-2e820dab",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:03.814Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809081686-6df6528f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:38:01.686Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809079524-d265070b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:59.524Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809078054-d27759f7",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:58.054Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809075661-c862febe",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:55.661Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809073983-80fb6396",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:53.983Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809071546-0df436bd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:51.546Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809069256-df832592",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:49.256Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809067337-6a627da0",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:47.337Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809065164-7ad5069d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:45.164Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809062987-b4bf0b8c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:42.987Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809060903-3b50d829",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:40.903Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809058606-d5b28b6d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:38.606Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809054120-46723798",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:34.120Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809051668-e9ed961d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:31.668Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809044353-f1225ee8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:24.353Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809037709-cc66dc27",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:17.709Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809030314-1a5cfb60",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:10.314Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809026231-cc865c67",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:06.231Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809024668-dc5876e8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:04.668Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809021990-7f021484",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:37:01.990Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809019899-4b5ffd39",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:59.899Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809018089-9fea1f47",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:58.089Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809016298-fc7f51d2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:56.298Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809014691-2d56466b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:54.691Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809012415-b9fddce5",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:52.415Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809009555-98c7be5f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:49.555Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809007137-ce9313c1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:47.137Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809004987-c8d46c7a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:44.987Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769809002952-78519fab",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:42.952Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769809001110-096eeb5f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:41.110Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808998922-181835b7",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:38.922Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808996596-a707e268",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:36.596Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808993531-a1e8b1c9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:33.531Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808989446-f73dd2ae",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:29.446Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808982215-729f5efc",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:22.215Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808975255-d484c147",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:15.255Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808968091-29a97b41",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:08.091Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808964032-348cf013",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:04.032Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808961844-87bb13eb",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:01.844Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808960174-ee88eaec",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:36:00.174Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808957967-44349251",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:57.967Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808956394-453ef93f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:56.394Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808953616-d80676c4",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:53.616Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808952126-d9bcfb43",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:52.126Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808949288-2fea4825",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:49.288Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808947182-414feb88",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:47.182Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808945605-2b665645",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:45.605Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808943181-efcbf8a5",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:43.181Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808941388-df67218d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:41.388Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808939521-29bdc28e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:39.521Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808937099-11268408",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:37.099Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808935282-1c8c0c59",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:35.282Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808932868-fe604280",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:32.868Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808930755-ca9f9359",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:30.755Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808928548-bc2b843d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:28.548Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808926521-3ab679d1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:26.521Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808924308-f85599e2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:24.308Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808922201-c0f3bdf9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:22.201Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808920175-24e657e6",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:20.175Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808918210-f71ab4b9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:18.210Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808916380-f310e1c8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:16.380Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808913857-9e776449",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:13.857Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808911838-52b2e6de",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:11.838Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808910394-895c9e98",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:10.394Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808907790-01df8382",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:07.790Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808906083-3a5c422b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:06.083Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808903535-de051c85",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:35:03.535Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808897040-84dc6e52",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:57.040Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808896636-190063af",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:56.636Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808889270-3a58b700",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:49.270Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808886122-2ffde53a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:46.122Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808879053-0fb8f907",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:39.053Z",
+      "featureName": "Integrated Fact-Checking",
+      "featureId": "article-fact-checking"
+    },
+    {
+      "id": "evt-1769808878127-69db0531",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:38.127Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808870695-a2ae921e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:30.695Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808867859-39924d1b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T21:34:27.859Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808865235-242083d1",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:34:25.235Z",
+      "featureName": "Automatic Article Clustering",
+      "featureId": "article-clustering"
+    },
+    {
+      "id": "evt-1769808770505-64acf3f1",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:32:50.505Z",
+      "featureName": "Article Archival System",
+      "featureId": "article-archive"
+    },
+    {
+      "id": "evt-1769808769183-aa22bdb7",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:32:49.183Z",
+      "featureName": "Article Comments and Notes",
+      "featureId": "article-comments"
+    },
+    {
+      "id": "evt-1769808652535-ad9453ed",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:30:52.535Z",
+      "featureName": "Automatic Article Clustering",
+      "featureId": "article-clustering"
+    },
+    {
+      "id": "evt-1769808034154-1c96ec37",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:20:34.154Z",
+      "featureName": "Pre-built Topic Templates",
+      "featureId": "topic-templates"
+    },
+    {
+      "id": "evt-1769807964901-bd57c792",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:19:24.901Z",
+      "featureName": "Topic Sharing",
+      "featureId": "topic-sharing"
+    },
+    {
+      "id": "evt-1769807956690-f2e00ccc",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:19:16.690Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769807918508-16316603",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:18:38.508Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769807863711-5962ad4b",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:17:43.711Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769807862733-878be1d7",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:17:42.733Z",
+      "featureName": "Topic Sharing",
+      "featureId": "topic-sharing"
+    },
+    {
+      "id": "evt-1769807817053-f9feb0c8",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:16:57.053Z",
+      "featureName": "Team Collaboration Features",
+      "featureId": "team-collaboration"
+    },
+    {
+      "id": "evt-1769807804998-6ce856bb",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:16:44.998Z",
+      "featureName": "Pre-built Topic Templates",
+      "featureId": "topic-templates"
+    },
+    {
+      "id": "evt-1769807748238-6df8c56b",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:15:48.238Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769807633612-c5dbf6ee",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:13:53.612Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769807629943-64f7d362",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:13:49.943Z",
+      "featureName": "Visual Query Builder",
+      "featureId": "advanced-query-builder"
+    },
+    {
+      "id": "evt-1769807608918-d2dc55a2",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:13:28.918Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769807291215-14081460",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:08:11.215Z",
+      "featureName": "Topic Monitoring Status Indicators",
+      "featureId": "topic-monitoring-status"
+    },
+    {
+      "id": "evt-1769807102082-3308fcf0",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:05:02.082Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769807041166-5e2b53bb",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:04:01.166Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769806982604-211e8e24",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T21:03:02.604Z",
+      "featureName": "Topic Analytics Dashboard",
+      "featureId": "topic-analytics"
+    },
+    {
+      "id": "evt-1769799223033-d1391f6c",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:43.033Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799221555-85945499",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:41.555Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799219125-1852a560",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:39.125Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799216890-da50a03d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:36.890Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799214764-2e45cca6",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:34.764Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799213100-b4225270",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:33.100Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799211190-bb609f95",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:31.190Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799208686-232f27f0",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:28.686Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799206259-3747561b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:26.259Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799204880-d17124c4",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:24.880Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799202103-c7dcf7a2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:22.103Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799200117-ee4e1c92",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:20.117Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799197939-894df024",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:17.939Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799196070-faf43b14",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:16.070Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799194033-03e100ab",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:14.033Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799191723-82489971",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:11.723Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799189723-7d00fa45",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:09.723Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799187616-cfbff37e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:07.616Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799185568-8d94cb8b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:05.568Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799183451-f2529957",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:03.451Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799181166-e9804a48",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:53:01.166Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799179198-54595d97",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:52:59.198Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799177133-22486a41",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:52:57.133Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799174824-861faf23",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:52:54.824Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799111045-4efc9c80",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:51.045Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799108707-466473f3",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:48.707Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799106535-b42577c0",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:46.535Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799104551-b0e39428",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:44.551Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799102256-91de421a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:42.256Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799100052-9f09c7db",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:40.052Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799098711-d44b3614",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:38.711Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799096142-876d7f01",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:36.142Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799095920-4d234871",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:35.920Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769799093920-48fc791f",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:33.920Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799092061-26e968df",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:32.061Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799090125-1e43dd9b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:30.125Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799088127-0264ed2d",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:28.127Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799085651-5cc341d3",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:25.651Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799083503-24f6bba5",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:23.503Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799081351-6dee82a2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:21.351Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799080307-012d69d1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:20.307Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799077009-1f8ec596",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:17.009Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799075536-1fbb0b36",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:15.536Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799073606-78cf14af",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:13.606Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799073068-44c5afc9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:13.068Z",
+      "featureName": "Topic Analytics Dashboard",
+      "featureId": "topic-analytics"
+    },
+    {
+      "id": "evt-1769799071038-734c99bd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:11.038Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799069006-0e7c0a79",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:09.006Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799067154-188695dd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:07.154Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769799065789-13045719",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:05.789Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769799065225-5412fb75",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:05.225Z",
+      "featureName": "Team Collaboration Features",
+      "featureId": "team-collaboration"
+    },
+    {
+      "id": "evt-1769799064780-f21886c8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:04.780Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769799064678-91c4bff2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:04.678Z",
+      "featureName": "Topic Sharing",
+      "featureId": "topic-sharing"
+    },
+    {
+      "id": "evt-1769799061319-0a7387a8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:51:01.319Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769799059267-7b5a4d6e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:50:59.267Z",
+      "featureName": "Team Collaboration Features",
+      "featureId": "team-collaboration"
+    },
+    {
+      "id": "evt-1769799057505-0d78b2c6",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:50:57.505Z",
+      "featureName": "Topic Monitoring Status Indicators",
+      "featureId": "topic-monitoring-status"
+    },
+    {
+      "id": "evt-1769799055980-a1ff7832",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:50:55.980Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769798155790-e42fd2c1",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:35:55.790Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769797678339-5d608d10",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:58.339Z",
+      "featureName": "Article Relevance Scoring",
+      "featureId": "relevance-scoring"
+    },
+    {
+      "id": "evt-1769797678050-26b10438",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:58.050Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769797664864-b6c17497",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:44.864Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769797662757-341a09fd",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:42.757Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769797660612-11398e02",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:40.612Z",
+      "featureName": "Topic Analytics Dashboard",
+      "featureId": "topic-analytics"
+    },
+    {
+      "id": "evt-1769797659649-368d1bff",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:39.649Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769797654700-b2275d62",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:34.700Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769797653878-39ed0a72",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:33.878Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769797652132-2caf7ef7",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:32.132Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769797650745-f73e10a8",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:30.745Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769797650137-4ceab75e",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:30.137Z",
+      "featureName": "Topic Analytics Dashboard",
+      "featureId": "topic-analytics"
+    },
+    {
+      "id": "evt-1769797647450-5e939c46",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:27.450Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769797646346-127135a2",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:26.346Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769797645860-317ae2c9",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:25.860Z",
+      "featureName": "Topic Analytics Dashboard",
+      "featureId": "topic-analytics"
+    },
+    {
+      "id": "evt-1769797643437-63c2f7e7",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:23.437Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769797642049-fed49264",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:22.049Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769797641999-e3a3e59f",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T18:27:21.999Z",
+      "featureName": "News Source Filtering",
+      "featureId": "source-filtering"
+    },
+    {
+      "id": "evt-1769797641597-517ce86a",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:21.597Z",
+      "featureName": "Topic Analytics Dashboard",
+      "featureId": "topic-analytics"
+    },
+    {
+      "id": "evt-1769797641164-fa76ef14",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:21.165Z",
+      "featureName": "Real-time Topic Alerts",
+      "featureId": "topic-alerts"
+    },
+    {
+      "id": "evt-1769797637801-21c4d2e5",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:17.801Z",
+      "featureName": "Scheduled Email Digests",
+      "featureId": "email-digests"
+    },
+    {
+      "id": "evt-1769797636342-5bcae93b",
+      "trigger": "feature_error",
+      "timestamp": "2026-01-30T18:27:16.342Z",
+      "featureName": "Topic Collections",
+      "featureId": "topic-collections"
+    },
+    {
+      "id": "evt-1769797483014-eafbdd11",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T18:24:43.014Z",
+      "featureName": "Alert Preference Settings",
+      "featureId": "alert-preferences"
+    },
+    {
+      "id": "evt-1769796227140-834f80f4",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T18:03:47.140Z",
+      "featureName": "Article Sentiment Analysis",
+      "featureId": "article-sentiment-analysis"
+    },
+    {
+      "id": "evt-1769796185884-1d33f8b0",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T18:03:05.884Z",
+      "featureName": "Duplicate Article Detection",
+      "featureId": "duplicate-detection"
+    },
+    {
+      "id": "evt-1769795947303-cb5fe183",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:59:07.303Z",
+      "featureName": "Social Media Source Integration",
+      "featureId": "social-media-integration"
+    },
+    {
+      "id": "evt-1769795933981-cf92d4b6",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:58:53.981Z",
+      "featureName": "Full-text Article Search",
+      "featureId": "article-search"
+    },
+    {
+      "id": "evt-1769795854013-bc9ea35c",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:57:34.013Z",
+      "featureName": "Mobile-Optimized Experience",
+      "featureId": "mobile-app-support"
+    },
+    {
+      "id": "evt-1769795816263-f07f41a1",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:56:56.263Z",
+      "featureName": "Competitor Monitoring Mode",
+      "featureId": "competitor-monitoring"
+    },
+    {
+      "id": "evt-1769795796609-1438844e",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:56:36.609Z",
+      "featureName": "Smart Keyword Extraction",
+      "featureId": "keyword-extraction"
+    },
+    {
+      "id": "evt-1769795738808-b2c776cf",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:55:38.808Z",
+      "featureName": "AI Article Summarization",
+      "featureId": "article-summarization"
+    },
+    {
+      "id": "evt-1769795672687-dc200235",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:54:32.687Z",
+      "featureName": "Background Topic Monitoring",
+      "featureId": "topic-monitoring-cron"
+    },
+    {
+      "id": "evt-1769795669745-b6f0e7dd",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:54:29.745Z",
+      "featureName": "News Topic Creation and Management",
+      "featureId": "news-topic-creation"
+    },
+    {
+      "id": "evt-1769795666374-8d32803a",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:54:26.374Z",
+      "featureName": "News API Integration",
+      "featureId": "news-source-integration"
+    },
+    {
+      "id": "evt-1769795666176-b33d2337",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:54:26.176Z",
+      "featureName": "Topic Dashboard View",
+      "featureId": "topic-dashboard"
+    },
+    {
+      "id": "evt-1769795630110-b0e94bad",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:53:50.110Z",
+      "featureName": "Article Feed by Topic",
+      "featureId": "article-feed-view"
+    },
+    {
+      "id": "evt-1769795442675-7b7d741f",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:50:42.675Z",
+      "featureName": "Article Bookmarking",
+      "featureId": "article-bookmarking"
+    },
+    {
+      "id": "evt-1769795358669-dd929fb5",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:49:18.669Z",
+      "featureName": "Article Storage Schema",
+      "featureId": "article-storage-schema"
+    },
+    {
+      "id": "evt-1769795326434-a8856bc3",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-30T17:48:46.434Z",
+      "featureName": "Topic Database Schema",
+      "featureId": "topic-schema-migration"
+    }
+  ]
+}

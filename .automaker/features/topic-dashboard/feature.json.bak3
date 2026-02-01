@@ -1,0 +1,14 @@
+{
+  "id": "topic-dashboard",
+  "category": "UI",
+  "title": "Topic Dashboard View",
+  "description": "Create a dashboard page displaying all monitored topics with article counts, latest updates, and quick actions. Replaces or augments the existing browse/my-songs interface.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "news-topic-creation"
+  ],
+  "createdAt": "2026-01-30T17:38:35.794Z",
+  "updatedAt": "2026-01-30T17:38:35.794Z"
+}

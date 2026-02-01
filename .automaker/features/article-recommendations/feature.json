@@ -1,0 +1,12 @@
+{
+  "id": "article-recommendations",
+  "category": "Core",
+  "title": "AI-Powered Article Recommendations",
+  "description": "Recommend articles from monitored topics based on reading history and engagement patterns. Uses collaborative filtering.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.813Z",
+  "updatedAt": "2026-01-31T08:17:36.263Z",
+  "descriptionHistory": []
+}

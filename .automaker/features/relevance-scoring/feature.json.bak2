@@ -1,0 +1,12 @@
+{
+  "id": "relevance-scoring",
+  "category": "Core",
+  "title": "Article Relevance Scoring",
+  "description": "Implement ML-based relevance scoring to rank articles by how well they match topic intent. Learns from user interactions.",
+  "status": "backlog",
+  "priority": 2,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.807Z",
+  "updatedAt": "2026-01-30T18:53:43.030Z",
+  "descriptionHistory": []
+}

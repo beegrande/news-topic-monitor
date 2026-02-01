@@ -1,0 +1,14 @@
+{
+  "id": "topic-schema-migration",
+  "category": "Database",
+  "title": "Topic Database Schema",
+  "description": "Create database tables for topics, including fields for topic name, keywords, monitoring frequency, user associations, and status. Includes relations between users and their monitored topics.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "news-topic-creation"
+  ],
+  "createdAt": "2026-01-30T17:38:35.791Z",
+  "updatedAt": "2026-01-30T17:38:35.791Z"
+}

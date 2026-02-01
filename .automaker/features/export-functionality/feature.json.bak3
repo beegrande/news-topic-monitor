@@ -1,0 +1,14 @@
+{
+  "id": "export-functionality",
+  "category": "Core",
+  "title": "Article Export",
+  "description": "Export articles and topic data to various formats (CSV, JSON, PDF). Useful for reporting and external analysis.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [
+    "article-storage-schema"
+  ],
+  "createdAt": "2026-01-30T17:38:35.804Z",
+  "updatedAt": "2026-01-30T17:38:35.804Z"
+}

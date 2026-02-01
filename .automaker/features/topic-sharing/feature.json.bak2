@@ -1,0 +1,12 @@
+{
+  "id": "topic-sharing",
+  "category": "Core",
+  "title": "Topic Sharing",
+  "description": "Enable users to share their monitored topics with others or make topics public. Allows collaborative monitoring of news topics.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.799Z",
+  "updatedAt": "2026-01-30T21:17:42.723Z",
+  "descriptionHistory": []
+}

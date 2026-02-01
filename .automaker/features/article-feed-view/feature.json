@@ -1,0 +1,12 @@
+{
+  "id": "article-feed-view",
+  "category": "UI",
+  "title": "Article Feed by Topic",
+  "description": "Display a feed of news articles for a specific topic with filtering, sorting, and pagination. Shows article summaries, sources, and timestamps.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.795Z",
+  "updatedAt": "2026-01-30T17:53:50.085Z",
+  "descriptionHistory": []
+}

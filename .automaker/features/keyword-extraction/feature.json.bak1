@@ -1,0 +1,12 @@
+{
+  "id": "keyword-extraction",
+  "category": "Core",
+  "title": "Smart Keyword Extraction",
+  "description": "Implement AI-based keyword extraction from user-provided topic descriptions to automatically generate relevant search terms. Improves monitoring accuracy.",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.796Z",
+  "updatedAt": "2026-01-30T17:54:34.120Z",
+  "descriptionHistory": []
+}

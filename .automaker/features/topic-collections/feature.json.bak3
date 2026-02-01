@@ -1,0 +1,12 @@
+{
+  "id": "topic-collections",
+  "category": "Core",
+  "title": "Topic Collections",
+  "description": "Group related topics into collections for better organization. Similar to playlists but for topics (e.g., 'Industry News', 'Competitor Tracking').",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.802Z",
+  "updatedAt": "2026-01-30T21:15:48.241Z",
+  "descriptionHistory": []
+}

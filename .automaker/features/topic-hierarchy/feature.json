@@ -1,0 +1,12 @@
+{
+  "id": "topic-hierarchy",
+  "category": "Core",
+  "title": "Hierarchical Topics",
+  "description": "Support parent-child topic relationships for better organization (e.g., 'Technology' > 'AI' > 'Machine Learning').",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.807Z",
+  "updatedAt": "2026-01-31T09:28:39.321Z",
+  "descriptionHistory": []
+}

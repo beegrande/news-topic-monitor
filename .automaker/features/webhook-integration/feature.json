@@ -1,0 +1,12 @@
+{
+  "id": "webhook-integration",
+  "category": "API",
+  "title": "Webhook Notifications",
+  "description": "Allow users to configure webhooks that trigger when new articles match their topics. Enables integration with external tools.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.808Z",
+  "updatedAt": "2026-01-31T12:58:45.274Z",
+  "descriptionHistory": []
+}

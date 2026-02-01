@@ -1,0 +1,12 @@
+{
+  "id": "article-clustering",
+  "category": "Core",
+  "title": "Automatic Article Clustering",
+  "description": "Group similar articles together into clusters to identify major story developments and reduce redundancy.",
+  "status": "in_progress",
+  "priority": 3,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.818Z",
+  "updatedAt": "2026-01-30T21:29:32.660Z",
+  "descriptionHistory": []
+}

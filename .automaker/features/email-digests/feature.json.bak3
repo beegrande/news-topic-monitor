@@ -1,0 +1,13 @@
+{
+  "id": "email-digests",
+  "category": "Core",
+  "title": "Scheduled Email Digests",
+  "description": "Send periodic email digests summarizing new articles across monitored topics. Configurable frequency (daily, weekly) per user.",
+  "status": "backlog",
+  "priority": 2,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.806Z",
+  "updatedAt": "2026-01-30T18:53:41.546Z",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-30T18:44:54.195Z"
+}

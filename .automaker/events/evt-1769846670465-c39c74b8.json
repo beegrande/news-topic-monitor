@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769846670465-c39c74b8",
+  "trigger": "feature_success",
+  "timestamp": "2026-01-31T08:04:30.465Z",
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "projectName": "news-topic-monitor",
+  "featureId": "article-fact-checking",
+  "featureName": "Integrated Fact-Checking",
+  "error": "Feature completed in 483s - auto-verified",
+  "passes": true
+}

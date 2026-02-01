@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769807041166-5e2b53bb",
+  "trigger": "feature_success",
+  "timestamp": "2026-01-30T21:04:01.166Z",
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "projectName": "news-topic-monitor",
+  "featureId": "email-digests",
+  "featureName": "Scheduled Email Digests",
+  "error": "Feature completed in 179s - auto-verified",
+  "passes": true
+}

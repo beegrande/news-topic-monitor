@@ -1,0 +1,12 @@
+{
+  "id": "topic-scheduling",
+  "category": "Core",
+  "title": "Topic Monitoring Schedules",
+  "description": "Set custom monitoring schedules for each topic (e.g., only during business hours, specific days). Optimizes API usage.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.816Z",
+  "updatedAt": "2026-01-31T11:46:38.881Z",
+  "descriptionHistory": []
+}

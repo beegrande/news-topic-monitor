@@ -1,0 +1,12 @@
+{
+  "id": "article-bookmarking",
+  "category": "Core",
+  "title": "Article Bookmarking",
+  "description": "Let users bookmark/save important articles for later review. Similar to the existing 'hearts' feature but for articles instead of songs.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.798Z",
+  "updatedAt": "2026-01-30T17:50:42.622Z",
+  "descriptionHistory": []
+}

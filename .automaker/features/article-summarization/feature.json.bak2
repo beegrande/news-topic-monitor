@@ -1,0 +1,12 @@
+{
+  "id": "article-summarization",
+  "category": "Core",
+  "title": "AI Article Summarization",
+  "description": "Generate concise summaries of news articles using AI. Stores summaries for quick scanning without reading full articles.",
+  "status": "backlog",
+  "priority": 2,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.802Z",
+  "updatedAt": "2026-01-30T17:38:35.802Z",
+  "descriptionHistory": []
+}

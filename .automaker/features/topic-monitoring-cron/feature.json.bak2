@@ -1,0 +1,12 @@
+{
+  "id": "topic-monitoring-cron",
+  "category": "Core",
+  "title": "Background Topic Monitoring",
+  "description": "Implement a background job system that periodically checks news sources for updates on monitored topics. Uses configurable intervals based on subscription tier.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.793Z",
+  "updatedAt": "2026-01-30T17:38:35.793Z",
+  "descriptionHistory": []
+}

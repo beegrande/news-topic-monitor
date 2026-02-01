@@ -1,0 +1,12 @@
+{
+  "id": "article-fact-checking",
+  "category": "Core",
+  "title": "Integrated Fact-Checking",
+  "description": "Integrate with fact-checking APIs to flag potentially misleading articles. Shows credibility scores and fact-check sources.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.816Z",
+  "updatedAt": "2026-01-31T08:04:30.450Z",
+  "descriptionHistory": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769799090125-1e43dd9b",
+  "trigger": "feature_error",
+  "timestamp": "2026-01-30T18:51:30.125Z",
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "projectName": "news-topic-monitor",
+  "featureId": "email-digests",
+  "featureName": "Scheduled Email Digests",
+  "error": "Claude Code process exited with code 1",
+  "errorType": "execution"
+}

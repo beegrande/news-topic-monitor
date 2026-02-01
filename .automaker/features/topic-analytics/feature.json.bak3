@@ -1,0 +1,12 @@
+{
+  "id": "topic-analytics",
+  "category": "UI",
+  "title": "Topic Analytics Dashboard",
+  "description": "Display analytics for each topic including article volume over time, trending keywords, source distribution, and sentiment trends with charts.",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.801Z",
+  "updatedAt": "2026-01-30T18:45:10.025Z",
+  "descriptionHistory": []
+}

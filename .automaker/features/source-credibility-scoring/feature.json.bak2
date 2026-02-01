@@ -1,0 +1,12 @@
+{
+  "id": "source-credibility-scoring",
+  "category": "Core",
+  "title": "News Source Credibility Ratings",
+  "description": "Maintain and display credibility ratings for news sources based on journalistic standards and user feedback.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.817Z",
+  "updatedAt": "2026-01-30T17:38:35.817Z",
+  "descriptionHistory": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "saved-searches",
+  "category": "Core",
+  "title": "Saved Search Queries",
+  "description": "Allow users to save complex article search queries for quick access. Acts as virtual topics based on search criteria.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.814Z",
+  "updatedAt": "2026-01-30T17:38:35.814Z",
+  "descriptionHistory": []
+}

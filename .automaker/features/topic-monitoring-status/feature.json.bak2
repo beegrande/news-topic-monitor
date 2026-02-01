@@ -1,0 +1,12 @@
+{
+  "id": "topic-monitoring-status",
+  "category": "UI",
+  "title": "Topic Monitoring Status Indicators",
+  "description": "Display real-time status of topic monitoring (active, paused, error, last checked). Includes health monitoring and error alerts.",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.813Z",
+  "updatedAt": "2026-01-30T21:01:52.392Z",
+  "descriptionHistory": []
+}

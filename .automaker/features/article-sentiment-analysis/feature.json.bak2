@@ -1,0 +1,12 @@
+{
+  "id": "article-sentiment-analysis",
+  "category": "Core",
+  "title": "Article Sentiment Analysis",
+  "description": "Analyze sentiment of fetched articles (positive, negative, neutral) using NLP. Stores sentiment scores in database and allows filtering by sentiment.",
+  "status": "backlog",
+  "priority": 2,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.796Z",
+  "updatedAt": "2026-01-30T17:38:35.796Z",
+  "descriptionHistory": []
+}

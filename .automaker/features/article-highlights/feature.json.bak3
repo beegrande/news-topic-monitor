@@ -1,0 +1,14 @@
+{
+  "id": "article-highlights",
+  "category": "UI",
+  "title": "Article Text Highlighting",
+  "description": "Enable users to highlight important text within articles and save highlights for later reference.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [
+    "article-storage-schema"
+  ],
+  "createdAt": "2026-01-30T17:38:35.815Z",
+  "updatedAt": "2026-01-30T17:38:35.815Z"
+}

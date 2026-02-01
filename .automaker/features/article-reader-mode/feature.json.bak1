@@ -1,0 +1,12 @@
+{
+  "id": "article-reader-mode",
+  "category": "UI",
+  "title": "Distraction-free Reader Mode",
+  "description": "Display articles in a clean, distraction-free reading interface with customizable typography and dark mode support.",
+  "status": "in_progress",
+  "priority": 3,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.817Z",
+  "updatedAt": "2026-01-31T08:01:39.977Z",
+  "descriptionHistory": []
+}

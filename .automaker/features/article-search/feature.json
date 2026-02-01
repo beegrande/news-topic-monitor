@@ -1,0 +1,12 @@
+{
+  "id": "article-search",
+  "category": "Core",
+  "title": "Full-text Article Search",
+  "description": "Implement full-text search across all stored articles with advanced filtering by date, source, sentiment, and topic. Uses PostgreSQL full-text search.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.800Z",
+  "updatedAt": "2026-01-30T17:58:53.923Z",
+  "descriptionHistory": []
+}

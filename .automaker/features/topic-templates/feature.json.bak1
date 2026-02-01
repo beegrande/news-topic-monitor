@@ -1,0 +1,12 @@
+{
+  "id": "topic-templates",
+  "category": "UI",
+  "title": "Pre-built Topic Templates",
+  "description": "Provide pre-configured topic templates for common use cases (tech news, politics, sports, etc.) that users can clone and customize.",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.800Z",
+  "updatedAt": "2026-01-30T21:17:42.735Z",
+  "descriptionHistory": []
+}

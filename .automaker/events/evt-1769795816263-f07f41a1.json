@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769795816263-f07f41a1",
+  "trigger": "feature_success",
+  "timestamp": "2026-01-30T17:56:56.263Z",
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "projectName": "news-topic-monitor",
+  "featureId": "competitor-monitoring",
+  "featureName": "Competitor Monitoring Mode",
+  "error": "Feature completed in 149s - auto-verified",
+  "passes": true
+}

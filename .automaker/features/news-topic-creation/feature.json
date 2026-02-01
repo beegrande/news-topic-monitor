@@ -1,0 +1,12 @@
+{
+  "id": "news-topic-creation",
+  "category": "Core",
+  "title": "News Topic Creation and Management",
+  "description": "Allow users to create and manage news topics they want to monitor. Users can define topic names, keywords, and monitoring criteria. This transforms the app from a music platform to a news monitoring system.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [],
+  "createdAt": "2026-01-30T17:38:35.788Z",
+  "updatedAt": "2026-01-30T17:54:29.726Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "source-filtering",
+  "category": "Core",
+  "title": "News Source Filtering",
+  "description": "Allow users to include or exclude specific news sources when monitoring topics. Maintains a whitelist/blacklist per topic.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.801Z",
+  "updatedAt": "2026-01-30T18:27:21.986Z",
+  "descriptionHistory": []
+}

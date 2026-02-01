@@ -1,0 +1,12 @@
+{
+  "id": "alert-preferences",
+  "category": "UI",
+  "title": "Alert Preference Settings",
+  "description": "Allow users to configure notification preferences per topic, including frequency, channels, and minimum relevance scores. Adds settings UI.",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.798Z",
+  "updatedAt": "2026-01-30T18:24:25.980Z",
+  "descriptionHistory": []
+}

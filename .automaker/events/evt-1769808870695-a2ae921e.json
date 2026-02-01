@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769808870695-a2ae921e",
+  "trigger": "feature_error",
+  "timestamp": "2026-01-30T21:34:30.695Z",
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "projectName": "news-topic-monitor",
+  "featureId": "article-comments",
+  "featureName": "Article Comments and Notes",
+  "error": "Claude Code process exited with code 1",
+  "errorType": "execution"
+}

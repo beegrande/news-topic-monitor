@@ -1,0 +1,12 @@
+{
+  "id": "article-comments",
+  "category": "Core",
+  "title": "Article Comments and Notes",
+  "description": "Enable users to add private comments and notes to articles. Useful for research and collaboration.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.809Z",
+  "updatedAt": "2026-01-30T21:41:50.860Z",
+  "descriptionHistory": []
+}

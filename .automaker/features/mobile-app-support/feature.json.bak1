@@ -1,0 +1,12 @@
+{
+  "id": "mobile-app-support",
+  "category": "UI",
+  "title": "Mobile-Optimized Experience",
+  "description": "Enhance mobile responsiveness and add Progressive Web App (PWA) support for offline article reading and push notifications.",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.819Z",
+  "updatedAt": "2026-01-30T17:55:42.156Z",
+  "descriptionHistory": []
+}

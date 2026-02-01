@@ -1,0 +1,12 @@
+{
+  "id": "rss-feed-generation",
+  "category": "API",
+  "title": "Personal RSS Feed Generation",
+  "description": "Generate private RSS feeds for each topic or collection, allowing users to consume updates in their preferred RSS reader.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.805Z",
+  "updatedAt": "2026-01-30T17:38:35.805Z",
+  "descriptionHistory": []
+}

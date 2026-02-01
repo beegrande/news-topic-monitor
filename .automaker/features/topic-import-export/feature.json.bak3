@@ -1,0 +1,14 @@
+{
+  "id": "topic-import-export",
+  "category": "Core",
+  "title": "Topic Configuration Import/Export",
+  "description": "Export and import topic configurations as JSON files. Useful for backup, sharing, and migration between accounts.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "simple",
+  "dependencies": [
+    "news-topic-creation"
+  ],
+  "createdAt": "2026-01-30T17:38:35.816Z",
+  "updatedAt": "2026-01-30T17:38:35.816Z"
+}

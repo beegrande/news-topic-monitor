@@ -1,0 +1,14 @@
+{
+  "id": "article-storage-schema",
+  "category": "Database",
+  "title": "Article Storage Schema",
+  "description": "Create database tables to store fetched news articles, including title, content, source, URL, publication date, and associated topics. Implements deduplication logic.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "topic-schema-migration"
+  ],
+  "createdAt": "2026-01-30T17:38:35.793Z",
+  "updatedAt": "2026-01-30T17:38:35.793Z"
+}

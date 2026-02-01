@@ -1,0 +1,12 @@
+{
+  "id": "topic-alerts",
+  "category": "Core",
+  "title": "Real-time Topic Alerts",
+  "description": "Send notifications to users when new articles matching their topics are found. Supports email, in-app, and optional push notifications.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.797Z",
+  "updatedAt": "2026-01-30T21:18:38.501Z",
+  "descriptionHistory": []
+}

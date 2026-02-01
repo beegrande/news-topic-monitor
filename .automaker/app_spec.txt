@@ -1,0 +1,219 @@
+<project_specification>
+  <project_name>news-topic-monitor</project_name>
+
+  <overview>
+    This project was created from the "Agentic Jumpstart" starter template.
+    A starter template for building agentic AI applications with a pre-configured development environment including database setup, Docker support, and TypeScript configuration.
+  </overview>
+
+  <technology_stack>
+    <technology>TypeScript</technology>
+    <technology>Vite</technology>
+    <technology>Drizzle ORM</technology>
+    <technology>Docker</technology>
+    <technology>PostCSS</technology>
+  </technology_stack>
+
+  <core_capabilities>
+    <capability>Pre-configured VS Code settings</capability>
+    <capability>Docker Compose setup</capability>
+    <capability>Database migrations with Drizzle</capability>
+    <capability>Type-safe development</capability>
+    <capability>Environment setup with .env.example</capability>
+  </core_capabilities>
+
+  <implemented_features>
+    <feature>
+      <name>Topic Database Schema</name>
+      <description>Create database tables for topics, including fields for topic name, keywords, monitoring frequency, user associations, and status. Includes relations between users and their monitored topics.</description>
+    </feature>
+    <feature>
+      <name>Article Storage Schema</name>
+      <description>Create database tables to store fetched news articles, including title, content, source, URL, publication date, and associated topics. Implements deduplication logic.</description>
+    </feature>
+    <feature>
+      <name>Article Bookmarking</name>
+      <description>Let users bookmark/save important articles for later review. Similar to the existing &apos;hearts&apos; feature but for articles instead of songs.</description>
+    </feature>
+    <feature>
+      <name>Article Feed by Topic</name>
+      <description>Display a feed of news articles for a specific topic with filtering, sorting, and pagination. Shows article summaries, sources, and timestamps.</description>
+    </feature>
+    <feature>
+      <name>Topic Dashboard View</name>
+      <description>Create a dashboard page displaying all monitored topics with article counts, latest updates, and quick actions. Replaces or augments the existing browse/my-songs interface.</description>
+    </feature>
+    <feature>
+      <name>News API Integration</name>
+      <description>Integrate with news APIs (NewsAPI, RSS feeds, or similar) to fetch news articles based on monitored topics. Implements rate limiting and caching to optimize API usage.</description>
+    </feature>
+    <feature>
+      <name>News Topic Creation and Management</name>
+      <description>Allow users to create and manage news topics they want to monitor. Users can define topic names, keywords, and monitoring criteria. This transforms the app from a music platform to a news monitoring system.</description>
+    </feature>
+    <feature>
+      <name>Background Topic Monitoring</name>
+      <description>Implement a background job system that periodically checks news sources for updates on monitored topics. Uses configurable intervals based on subscription tier.</description>
+    </feature>
+    <feature>
+      <name>AI Article Summarization</name>
+      <description>Generate concise summaries of news articles using AI. Stores summaries for quick scanning without reading full articles.</description>
+    </feature>
+    <feature>
+      <name>Smart Keyword Extraction</name>
+      <description>Implement AI-based keyword extraction from user-provided topic descriptions to automatically generate relevant search terms. Improves monitoring accuracy.</description>
+    </feature>
+    <feature>
+      <name>Competitor Monitoring Mode</name>
+      <description>Specialized monitoring mode focused on tracking competitor mentions, product launches, and company news with dedicated UI.</description>
+    </feature>
+    <feature>
+      <name>Mobile-Optimized Experience</name>
+      <description>Enhance mobile responsiveness and add Progressive Web App (PWA) support for offline article reading and push notifications.</description>
+    </feature>
+    <feature>
+      <name>Full-text Article Search</name>
+      <description>Implement full-text search across all stored articles with advanced filtering by date, source, sentiment, and topic. Uses PostgreSQL full-text search.</description>
+    </feature>
+    <feature>
+      <name>Social Media Source Integration</name>
+      <description>Extend monitoring to social media platforms (Twitter, Reddit, LinkedIn) in addition to traditional news sources.</description>
+    </feature>
+    <feature>
+      <name>Duplicate Article Detection</name>
+      <description>Implement intelligent duplicate detection to avoid storing the same article from multiple sources. Uses content similarity matching.</description>
+    </feature>
+    <feature>
+      <name>Article Sentiment Analysis</name>
+      <description>Analyze sentiment of fetched articles (positive, negative, neutral) using NLP. Stores sentiment scores in database and allows filtering by sentiment.</description>
+    </feature>
+    <feature>
+      <name>Alert Preference Settings</name>
+      <description>Allow users to configure notification preferences per topic, including frequency, channels, and minimum relevance scores. Adds settings UI.</description>
+    </feature>
+    <feature>
+      <name>News Source Filtering</name>
+      <description>Allow users to include or exclude specific news sources when monitoring topics. Maintains a whitelist/blacklist per topic.</description>
+    </feature>
+    <feature>
+      <name>Topic Analytics Dashboard</name>
+      <description>Display analytics for each topic including article volume over time, trending keywords, source distribution, and sentiment trends with charts.</description>
+    </feature>
+    <feature>
+      <name>Scheduled Email Digests</name>
+      <description>Send periodic email digests summarizing new articles across monitored topics. Configurable frequency (daily, weekly) per user.</description>
+    </feature>
+    <feature>
+      <name>Article Relevance Scoring</name>
+      <description>Implement ML-based relevance scoring to rank articles by how well they match topic intent. Learns from user interactions.</description>
+    </feature>
+    <feature>
+      <name>Topic Monitoring Status Indicators</name>
+      <description>Display real-time status of topic monitoring (active, paused, error, last checked). Includes health monitoring and error alerts.</description>
+    </feature>
+    <feature>
+      <name>Real-time Topic Alerts</name>
+      <description>Send notifications to users when new articles matching their topics are found. Supports email, in-app, and optional push notifications.</description>
+    </feature>
+    <feature>
+      <name>Visual Query Builder</name>
+      <description>Provide a visual interface for building complex topic queries with boolean operators, proximity searches, and field-specific filters.</description>
+    </feature>
+    <feature>
+      <name>Topic Collections</name>
+      <description>Group related topics into collections for better organization. Similar to playlists but for topics (e.g., &apos;Industry News&apos;, &apos;Competitor Tracking&apos;).</description>
+    </feature>
+    <feature>
+      <name>Pre-built Topic Templates</name>
+      <description>Provide pre-configured topic templates for common use cases (tech news, politics, sports, etc.) that users can clone and customize.</description>
+    </feature>
+    <feature>
+      <name>Team Collaboration Features</name>
+      <description>Add team workspace functionality where multiple users can collaborate on monitoring topics and share insights.</description>
+    </feature>
+    <feature>
+      <name>Topic Sharing</name>
+      <description>Enable users to share their monitored topics with others or make topics public. Allows collaborative monitoring of news topics.</description>
+    </feature>
+    <feature>
+      <name>Automatic Article Clustering</name>
+      <description>Group similar articles together into clusters to identify major story developments and reduce redundancy.</description>
+    </feature>
+    <feature>
+      <name>Article Comments and Notes</name>
+      <description>Enable users to add private comments and notes to articles. Useful for research and collaboration.</description>
+    </feature>
+    <feature>
+      <name>Article Archival System</name>
+      <description>Automatically archive old articles to reduce database size. Implements tiered storage with fast access for recent articles.</description>
+    </feature>
+    <feature>
+      <name>Article Text Highlighting</name>
+      <description>Enable users to highlight important text within articles and save highlights for later reference.</description>
+    </feature>
+    <feature>
+      <name>Integrated Fact-Checking</name>
+      <description>Integrate with fact-checking APIs to flag potentially misleading articles. Shows credibility scores and fact-check sources.</description>
+    </feature>
+    <feature>
+      <name>Estimated Reading Time</name>
+      <description>Calculate and display estimated reading time for each article. Helps users prioritize which articles to read.</description>
+    </feature>
+    <feature>
+      <name>Distraction-free Reader Mode</name>
+      <description>Display articles in a clean, distraction-free reading interface with customizable typography and dark mode support.</description>
+    </feature>
+    <feature>
+      <name>Custom Article Tagging</name>
+      <description>Allow users to add custom tags to articles for personal organization. Supports tag-based filtering and search.</description>
+    </feature>
+    <feature>
+      <name>AI-Powered Article Recommendations</name>
+      <description>Recommend articles from monitored topics based on reading history and engagement patterns. Uses collaborative filtering.</description>
+    </feature>
+    <feature>
+      <name>Article Export</name>
+      <description>Export articles and topic data to various formats (CSV, JSON, PDF). Useful for reporting and external analysis.</description>
+    </feature>
+    <feature>
+      <name>Geographic Article Filtering</name>
+      <description>Filter articles by geographic region or country. Stores location metadata and provides map-based visualization.</description>
+    </feature>
+    <feature>
+      <name>Multi-language Article Support</name>
+      <description>Monitor and store articles in multiple languages. Includes language detection and optional translation of article summaries.</description>
+    </feature>
+    <feature>
+      <name>Personal RSS Feed Generation</name>
+      <description>Generate private RSS feeds for each topic or collection, allowing users to consume updates in their preferred RSS reader.</description>
+    </feature>
+    <feature>
+      <name>Saved Search Queries</name>
+      <description>Allow users to save complex article search queries for quick access. Acts as virtual topics based on search criteria.</description>
+    </feature>
+    <feature>
+      <name>News Source Credibility Ratings</name>
+      <description>Maintain and display credibility ratings for news sources based on journalistic standards and user feedback.</description>
+    </feature>
+    <feature>
+      <name>Topic Configuration Import/Export</name>
+      <description>Export and import topic configurations as JSON files. Useful for backup, sharing, and migration between accounts.</description>
+    </feature>
+    <feature>
+      <name>Hierarchical Topics</name>
+      <description>Support parent-child topic relationships for better organization (e.g., &apos;Technology&apos; &gt; &apos;AI&apos; &gt; &apos;Machine Learning&apos;).</description>
+    </feature>
+    <feature>
+      <name>Trending Topics Discovery</name>
+      <description>Display trending topics across all users to help discover new topics to monitor. Shows topic popularity and recent activity.</description>
+    </feature>
+    <feature>
+      <name>Topic Monitoring Schedules</name>
+      <description>Set custom monitoring schedules for each topic (e.g., only during business hours, specific days). Optimizes API usage.</description>
+    </feature>
+    <feature>
+      <name>Webhook Notifications</name>
+      <description>Allow users to configure webhooks that trigger when new articles match their topics. Enables integration with external tools.</description>
+    </feature>
+  </implemented_features>
+</project_specification>

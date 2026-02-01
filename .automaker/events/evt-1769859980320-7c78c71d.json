@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769859980320-7c78c71d",
+  "trigger": "feature_error",
+  "timestamp": "2026-01-31T11:46:20.320Z",
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "projectName": "news-topic-monitor",
+  "featureId": "trending-topics",
+  "featureName": "Trending Topics Discovery",
+  "error": "Claude Code process exited with code 1",
+  "errorType": "execution"
+}

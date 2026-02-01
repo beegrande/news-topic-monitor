@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "autoLoopWasRunning": false,
+  "maxConcurrency": 1,
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "branchName": null,
+  "runningFeatureIds": [
+    "topic-scheduling",
+    "webhook-integration"
+  ],
+  "savedAt": "2026-01-31T12:45:00.009Z"
+}

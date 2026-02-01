@@ -1,0 +1,1 @@
+ALTER TABLE "topic" ADD COLUMN "last_checked_at" timestamp;

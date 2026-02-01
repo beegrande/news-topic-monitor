@@ -1,0 +1,12 @@
+{
+  "id": "advanced-query-builder",
+  "category": "UI",
+  "title": "Visual Query Builder",
+  "description": "Provide a visual interface for building complex topic queries with boolean operators, proximity searches, and field-specific filters.",
+  "status": "in_progress",
+  "priority": 3,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.812Z",
+  "updatedAt": "2026-01-30T21:11:06.636Z",
+  "descriptionHistory": []
+}

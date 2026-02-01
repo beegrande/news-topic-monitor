@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769809016298-fc7f51d2",
+  "trigger": "feature_error",
+  "timestamp": "2026-01-30T21:36:56.298Z",
+  "projectPath": "/Users/bjarkenielsen/Documents/Automaker/news-topic-monitor",
+  "projectName": "news-topic-monitor",
+  "featureId": "article-fact-checking",
+  "featureName": "Integrated Fact-Checking",
+  "error": "Claude Code process exited with code 1",
+  "errorType": "execution"
+}

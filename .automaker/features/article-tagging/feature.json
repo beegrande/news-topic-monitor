@@ -1,0 +1,12 @@
+{
+  "id": "article-tagging",
+  "category": "Core",
+  "title": "Custom Article Tagging",
+  "description": "Allow users to add custom tags to articles for personal organization. Supports tag-based filtering and search.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "simple",
+  "createdAt": "2026-01-30T17:38:35.804Z",
+  "updatedAt": "2026-01-31T08:12:49.324Z",
+  "descriptionHistory": []
+}

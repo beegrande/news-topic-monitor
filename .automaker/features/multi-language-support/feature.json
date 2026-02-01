@@ -1,0 +1,12 @@
+{
+  "id": "multi-language-support",
+  "category": "Core",
+  "title": "Multi-language Article Support",
+  "description": "Monitor and store articles in multiple languages. Includes language detection and optional translation of article summaries.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.808Z",
+  "updatedAt": "2026-01-31T08:33:22.068Z",
+  "descriptionHistory": []
+}

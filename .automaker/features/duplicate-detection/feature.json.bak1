@@ -1,0 +1,12 @@
+{
+  "id": "duplicate-detection",
+  "category": "Core",
+  "title": "Duplicate Article Detection",
+  "description": "Implement intelligent duplicate detection to avoid storing the same article from multiple sources. Uses content similarity matching.",
+  "status": "in_progress",
+  "priority": 2,
+  "complexity": "complex",
+  "createdAt": "2026-01-30T17:38:35.803Z",
+  "updatedAt": "2026-01-30T17:54:29.916Z",
+  "descriptionHistory": []
+}

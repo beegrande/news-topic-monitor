@@ -1,0 +1,12 @@
+{
+  "id": "geo-filtering",
+  "category": "Core",
+  "title": "Geographic Article Filtering",
+  "description": "Filter articles by geographic region or country. Stores location metadata and provides map-based visualization.",
+  "status": "backlog",
+  "priority": 3,
+  "complexity": "moderate",
+  "createdAt": "2026-01-30T17:38:35.810Z",
+  "updatedAt": "2026-01-30T17:38:35.810Z",
+  "descriptionHistory": []
+}
