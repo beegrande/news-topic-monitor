@@ -14,7 +14,7 @@ This guide will help you set up the NewsMonitor application on a machine with Do
 
 ```bash
 cd /path/to/your/projects
-git clone <repository-url> news-topic-monitor
+git clone https://github.com/beegrande/news-topic-monitor.git
 cd news-topic-monitor
 npm install
 ```
