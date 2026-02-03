@@ -84,8 +84,8 @@ export function NotificationDropdown() {
                 asChild
               >
                 <Link
-                  to="/topics/$topicId"
-                  params={{ topicId: notification.topicId }}
+                  to={notification.topicId ? "/topic/$id/articles" : "/topics"}
+                  params={notification.topicId ? { id: notification.topicId } : {}}
                 >
                   <div className="flex w-full items-start justify-between gap-2">
                     <div className="flex-1 space-y-1">

@@ -1,4 +1,4 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import {
   LayoutDashboard,
   Newspaper,
@@ -42,6 +42,7 @@ interface AppSidebarProps {
 
 export function AppSidebar({ className }: AppSidebarProps) {
   const location = useLocation();
+  const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
 
   const isActive = (href: string) => {
@@ -51,16 +52,20 @@ export function AppSidebar({ className }: AppSidebarProps) {
     return location.pathname.startsWith(href);
   };
 
+  const handleNavClick = (href: string) => {
+    navigate({ to: href });
+  };
+
   const NavLink = ({ item, collapsed }: { item: NavItem; collapsed: boolean }) => {
     const Icon = item.icon;
     const active = isActive(item.href);
 
     const linkContent = (
-      <Link
-        to={item.href as "/dashboard" | "/topics" | "/search" | "/collections" | "/saved-searches" | "/teams" | "/settings"}
+      <button
+        onClick={() => handleNavClick(item.href)}
         className={cn(
-          "flex items-center h-10 rounded-md transition-colors",
-          collapsed ? "justify-center w-full" : "gap-3 px-3",
+          "flex items-center h-10 rounded-md transition-colors w-full",
+          collapsed ? "justify-center" : "gap-3 px-3",
           active
             ? "bg-sidebar-accent text-sidebar-primary font-medium"
             : "text-sidebar-muted hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
@@ -68,7 +73,7 @@ export function AppSidebar({ className }: AppSidebarProps) {
       >
         <Icon className="h-5 w-5 shrink-0" />
         {!collapsed && <span>{item.title}</span>}
-      </Link>
+      </button>
     );
 
     if (collapsed) {

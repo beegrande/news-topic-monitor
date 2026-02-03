@@ -359,7 +359,8 @@ export function ArticleCard({ article, topicId, showFeedback, showNotes = true }
       {/* Reader Mode Link */}
       <div className="border-t border-border/50 px-4 py-2">
         <Link
-          to={`/article/${article.id}`}
+          to="/article/$id"
+          params={{ id: article.id }}
           className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           onClick={(e) => e.stopPropagation()}
         >

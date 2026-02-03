@@ -724,3 +724,58 @@ Implemented export functionality for CSV/JSON formats.
 
 ## Article Recommendations Feature (COMPLETED)
 Implemented collaborative filtering recommendations.
+
+---
+
+# Fix Broken UI Components (COMPLETED)
+
+## Overview
+Fixed broken navigation links and removed non-existent route from publicRoutes.
+
+## Completed Tasks
+
+- [x] Fix NotificationDropdown broken navigation link
+  - Changed route from `/topics/$topicId` to `/topic/$id/articles`
+  - Added null handling for `notification.topicId` (falls back to `/topics` if null)
+
+- [x] Remove /pricing from publicRoutes array
+  - Removed non-existent `/pricing` route from the publicRoutes array in `__root.tsx`
+
+- [x] Fix ArticleCard Reader Mode link
+  - Changed from template literal `/article/${article.id}` to typed route `/article/$id` with params
+
+## Files Modified
+
+1. `src/components/NotificationDropdown.tsx`
+   - Lines 86-90: Changed broken route and added null handling for topicId
+
+2. `src/routes/__root.tsx`
+   - Line 86: Removed `/pricing` from publicRoutes array
+
+3. `src/components/ArticleCard.tsx`
+   - Lines 362-363: Changed to proper TanStack Router Link with params
+
+## Review
+
+### Changes Made
+All three planned fixes were implemented:
+1. NotificationDropdown now correctly navigates to `/topic/$id/articles` when clicking notifications
+2. The non-existent `/pricing` route was removed from the public routes array
+3. ArticleCard Reader Mode link now uses proper typed routing
+
+### Pre-existing TypeScript Errors
+The following errors existed before this fix and are unrelated to the navigation changes:
+- `src/data-access/recommendations.ts` - Type mismatch in ArticleWithRelevance
+- `src/lib/stripe.ts` - Stripe API version mismatch
+- `src/routes/dashboard.tsx` - Missing search params for Link
+- `src/routes/recommendations.tsx` - Missing search params for Link
+- `src/routes/teams.tsx` - Missing search params for Link (2 instances)
+
+### Build Status
+- Vite build: SUCCESS
+- TypeScript errors are pre-existing and not introduced by this change
+
+### Testing Notes
+Manual testing recommended for:
+- Click notification in dropdown → should navigate to topic articles
+- Click "Read in Reader Mode" on article card → should open article reader

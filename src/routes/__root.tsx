@@ -83,7 +83,7 @@ function RootComponent() {
 }
 
 // Public routes that should always use the header/footer layout
-const publicRoutes = ["/", "/sign-in", "/sign-up", "/pricing", "/forgot-password", "/reset-password"];
+const publicRoutes = ["/", "/sign-in", "/sign-up", "/forgot-password", "/reset-password"];
 
 function AppContent({ children }: { children: React.ReactNode }) {
   const { data: session, isPending } = authClient.useSession();
