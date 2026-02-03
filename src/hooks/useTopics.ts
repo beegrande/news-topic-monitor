@@ -14,6 +14,7 @@ import {
   moveTopicFn,
   exportTopicsFn,
   importTopicsFn,
+  runTopicNowFn,
 } from "~/fn/topics";
 import {
   getUserTopicsQuery,
@@ -361,5 +362,36 @@ export function useTrendingTopics(limit?: number, enabled = true) {
   return useQuery({
     ...getTrendingTopicsQuery(limit),
     enabled,
+  });
+}
+
+// Run topic now hook - manual news fetch trigger
+export function useRunTopicNow() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id: string) => runTopicNowFn({ data: { id } }),
+    onSuccess: (result) => {
+      if (result.success) {
+        if (result.articlesCreated > 0) {
+          toast.success(`Found ${result.articlesFound} articles, ${result.articlesCreated} new`);
+        } else if (result.articlesFound > 0) {
+          toast.info(`Found ${result.articlesFound} articles, all already indexed`);
+        } else {
+          toast.info("No new articles found");
+        }
+        queryClient.invalidateQueries({ queryKey: ["user-topics"] });
+        queryClient.invalidateQueries({ queryKey: ["articles"] });
+      } else {
+        toast.error("Failed to fetch news", {
+          description: result.error,
+        });
+      }
+    },
+    onError: (error) => {
+      toast.error("Failed to run topic", {
+        description: getErrorMessage(error),
+      });
+    },
   });
 }

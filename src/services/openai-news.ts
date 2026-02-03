@@ -132,6 +132,13 @@ IMPORTANT: Return ONLY valid JSON, no markdown formatting or code blocks. The re
       }
     }
 
+    // Log the articles found for debugging
+    console.log(`[OpenAI News] Found ${validArticles.length} articles for keywords: "${keywords}"`);
+    for (const article of validArticles.slice(0, maxArticles)) {
+      console.log(`  - [${article.source}] ${article.title.slice(0, 60)}...`);
+      console.log(`    URL: ${article.url}`);
+    }
+
     return validArticles.slice(0, maxArticles);
   } catch (error) {
     if (error instanceof OpenAINewsError) {

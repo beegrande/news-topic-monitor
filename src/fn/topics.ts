@@ -720,3 +720,15 @@ export const getTrendingTopicsFn = createServerFn({
     const limit = data.limit ?? 10;
     return await getTrendingTopics(limit);
   });
+
+// Run topic now - manual trigger for news fetch
+import { runTopicNowUseCase } from "~/use-cases/runTopicNowUseCase";
+
+export const runTopicNowFn = createServerFn({
+  method: "POST",
+})
+  .inputValidator(z.object({ id: z.string() }))
+  .middleware([authenticatedMiddleware])
+  .handler(async ({ data, context }) => {
+    return await runTopicNowUseCase(data.id, context.userId);
+  });

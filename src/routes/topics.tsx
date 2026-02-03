@@ -5,7 +5,7 @@ import { AddToCollectionDialog } from "~/components/AddToCollectionDialog";
 import { TopicTemplatesSection } from "~/components/TopicTemplatesSection";
 import { ExportTopicsDialog } from "~/components/ExportTopicsDialog";
 import { ImportTopicsDialog } from "~/components/ImportTopicsDialog";
-import { useTopics, useDeleteTopic, useSetTopicStatus, useTopicHierarchy } from "~/hooks/useTopics";
+import { useTopics, useDeleteTopic, useSetTopicStatus, useTopicHierarchy, useRunTopicNow } from "~/hooks/useTopics";
 import type { TopicTemplate } from "~/data/topic-templates";
 import type { TopicWithChildren } from "~/data-access/topics";
 import {
@@ -29,6 +29,7 @@ import {
   Layers,
   Download,
   Upload,
+  Zap,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "~/components/ui/button";
@@ -82,6 +83,7 @@ function TopicsPage() {
   const { data: topicHierarchy = [] } = useTopicHierarchy();
   const deleteTopicMutation = useDeleteTopic();
   const setStatusMutation = useSetTopicStatus();
+  const runTopicNowMutation = useRunTopicNow();
 
   const toggleExpanded = (topicId: string) => {
     setExpandedTopics(prev => {
@@ -425,6 +427,13 @@ function TopicsPage() {
                             <BarChart3 className="w-4 h-4 mr-2" />
                             View Analytics
                           </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          onClick={() => runTopicNowMutation.mutate(topic.id)}
+                          disabled={runTopicNowMutation.isPending}
+                        >
+                          <Zap className="w-4 h-4 mr-2" />
+                          {runTopicNowMutation.isPending ? "Running..." : "Run Now"}
                         </DropdownMenuItem>
                         <AddToCollectionDialog
                           topicId={topic.id}
