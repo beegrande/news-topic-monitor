@@ -39,6 +39,7 @@ function SearchPage() {
   const { q } = Route.useSearch();
   const navigate = useNavigate();
 
+  // Initialize from URL param
   const [searchQuery, setSearchQuery] = useState(q || "");
   const [debouncedQuery, setDebouncedQuery] = useState(q || "");
   const [selectedSource, setSelectedSource] = useState<string | undefined>();
@@ -47,32 +48,39 @@ function SearchPage() {
   const [dateTo, setDateTo] = useState<string>("");
   const [offset, setOffset] = useState(0);
 
-  // Sync from URL param on mount or when q changes
+  // Sync from URL param only on initial load or external navigation
   useEffect(() => {
-    if (q !== undefined && q !== searchQuery) {
-      setSearchQuery(q);
-      setDebouncedQuery(q);
+    const urlQuery = q || "";
+    if (urlQuery !== searchQuery) {
+      setSearchQuery(urlQuery);
+      setDebouncedQuery(urlQuery);
     }
+    // Only run when q changes from URL navigation, not from our own updates
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q]);
 
-  // Debounce search query and sync to URL
+  // Debounce search query
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(searchQuery);
       setOffset(0); // Reset pagination on new search
-
-      // Sync URL with search query
-      const newQ = searchQuery || undefined;
-      if (newQ !== q) {
-        navigate({
-          to: "/search",
-          search: { q: newQ },
-          replace: true,
-        });
-      }
     }, 300);
     return () => clearTimeout(timer);
-  }, [searchQuery, q, navigate]);
+  }, [searchQuery]);
+
+  // Sync URL when debounced query changes (user typing)
+  useEffect(() => {
+    const newQ = debouncedQuery || undefined;
+    const currentQ = q || undefined;
+    if (newQ !== currentQ) {
+      navigate({
+        to: "/search",
+        search: { q: newQ },
+        replace: true,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedQuery]);
 
   // Fetch search results
   const {
