@@ -71,7 +71,7 @@ function TopicAnalyticsPage() {
             description="There was a problem loading the analytics data. Please try again."
           />
         ) : data ? (
-          <TopicAnalytics data={data} />
+          <TopicAnalytics data={data} topicId={topicId} />
         ) : (
           <EmptyState
             icon={<BarChart3 className="h-10 w-10 text-primary/60" />}
