@@ -132,7 +132,7 @@ export function TopicMonitoringStatus({
       </div>
 
       {monitoringStatus === "error" && topic.lastError && (
-        <div className="flex items-start gap-1.5 text-xs text-red-600 bg-red-50 dark:bg-red-950/30 rounded px-2 py-1">
+        <div className="flex items-start gap-1.5 text-xs text-red-400 bg-red-950/30 rounded px-2 py-1">
           <AlertTriangle className="h-3 w-3 mt-0.5 flex-shrink-0" />
           <span className="line-clamp-2">{topic.lastError}</span>
         </div>

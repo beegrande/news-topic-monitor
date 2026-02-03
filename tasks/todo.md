@@ -1,3 +1,161 @@
+# Dark Theme Redesign - Full Application (COMPLETED)
+
+## Overview
+Updated the entire application to use a dark theme by default, matching the ComplianceSuite/PAMS design:
+- Near-black background (`oklch(0.08 0 0)`)
+- Orange/amber accent colors
+- All pages consistently dark
+- Removed all light-themed color classes
+
+## Changes Made
+
+### Theme File (`src/styles/app.css`)
+- Updated `:root` to use dark colors as default (not just `.dark` class)
+- Background: `oklch(0.08 0 0)` (near-black)
+- Primary: `oklch(0.65 0.18 50)` (orange/amber)
+- Card/popover: `oklch(0.12 0.005 250)` (dark gray)
+- Updated sidebar colors for PAMS branding
+
+### Sign-In Page (`src/routes/sign-in.tsx`)
+- Changed aside from light gradient to `bg-background`
+- Updated decorative elements to use `primary` color
+- Changed button from red/orange gradient to `bg-primary`
+- Updated all text colors to theme variables
+
+### Sign-Up Page (`src/routes/sign-up.tsx`)
+- Same updates as sign-in page
+- Removed `from-orange-50 to-red-50` gradient
+- Updated to use `bg-background`, `text-foreground`, `text-muted-foreground`
+
+### Component Updates
+- `TopicMonitoringStatus.tsx` - Removed `bg-red-50`, kept `bg-red-950/30`
+- `ArticleCard.tsx` - Removed light-themed classes, kept dark variants
+- `WebhookSettings.tsx` - Removed `bg-red-50`, `bg-green-100`, `bg-gray-100`
+- `settings.tsx` - Removed `bg-white`, `bg-gray-200`, updated to `bg-card`, `bg-muted`
+- `ApiKeySettings.tsx` - Updated skeleton loaders to `bg-muted`
+- `NotFound.tsx` - Updated to `text-muted-foreground`
+- `SourceFeedbackDialog.tsx` - Simplified star colors for dark theme
+- `article/$id/index.tsx` - Removed light-themed sentiment badge colors
+
+### Hero.tsx
+Already using theme variables (`text-primary`, `bg-primary/20`, etc.) - no changes needed
+
+### Header.tsx & Footer.tsx
+Already using theme variables (`bg-background`, `text-foreground`, etc.) - no changes needed
+
+## Verification
+- All pages now render with dark background
+- Orange/amber accents visible for primary actions
+- Consistent dark theme across the entire application
+
+---
+
+# UI Redesign - ComplianceSuite Inspired (COMPLETED)
+
+## Overview
+Redesign the NewsMonitor app UI inspired by ComplianceSuite with:
+- Dark blue sidebar navigation
+- Professional stat cards
+- Dark header with logo
+- Clean, professional design
+
+## Design Inspiration Analysis
+From ComplianceSuite design inspiration images:
+- Dark sidebar navigation with icons
+- Large stat cards with prominent numbers
+- Dark header bar with logo
+- Tables/lists for data display
+- Orange/amber accent colors (keeping existing primary color)
+- The PAMS logo uses dark navy blue: approximately #1a365d
+
+## Todo Items
+
+- [x] Update color scheme with new dark blue sidebar colors
+- [x] Create AppSidebar component with navigation
+- [x] Create SidebarLayout wrapper component
+- [x] Create StatCard component for dashboard metrics
+- [x] Update root layout to use sidebar for authenticated users
+- [x] Update dashboard to show stat cards
+- [x] Test the new layout works correctly
+
+## Review Section
+
+### Summary
+Successfully redesigned the NewsMonitor app UI inspired by ComplianceSuite with a dark blue sidebar navigation, professional stat cards, and a clean layout. The redesign maintains backward compatibility with public pages (landing, sign-in, sign-up) using the original header/footer layout while authenticated users get the new sidebar-based navigation.
+
+### Changes Made
+
+**CSS Changes** (`src/styles/app.css`):
+- Updated sidebar colors to dark navy blue theme
+- Added `--sidebar-muted` color variable for inactive navigation items
+- Light mode: `oklch(0.2 0.03 250)` for sidebar background
+- Dark mode: `oklch(0.18 0.03 250)` for sidebar background
+
+**New Components**:
+1. `AppSidebar.tsx` - Collapsible sidebar with:
+   - Dark navy blue background
+   - Logo header with NewsMonitor branding
+   - Main navigation (Dashboard, Topics, Search, Collections, Saved Searches, Teams)
+   - Bottom navigation (Notifications, Settings, Sign Out)
+   - Collapse toggle with tooltip support when collapsed
+
+2. `SidebarLayout.tsx` - Layout wrapper providing:
+   - Desktop sidebar (hidden on mobile)
+   - Mobile sidebar via Sheet component
+   - Top bar with mobile menu, notifications, theme toggle, and avatar
+   - Main content area with subtle background
+
+3. `StatCard.tsx` - Dashboard metrics component with:
+   - Label, value, description, icon support
+   - Color variants (default, success, warning, danger)
+   - Trend display option
+   - Skeleton loading state
+
+**Route Changes** (`__root.tsx`):
+- Added `AppContent` component for conditional layout rendering
+- Public routes (/, /sign-in, /sign-up, etc.) use header/footer layout
+- Authenticated app pages use the new SidebarLayout
+
+**Dashboard Updates** (`dashboard.tsx`):
+- Added stat cards showing Total Topics, Active Topics, Total Articles, Alert Topics
+- Stats calculated from topics data with proper loading states
+
+### Features
+- Dark blue sidebar inspired by ComplianceSuite/PAMS design
+- Collapsible sidebar with tooltips when collapsed
+- Stat cards with color-coded values
+- Responsive design (sidebar collapses to sheet on mobile)
+- Maintains existing header/footer for public pages
+
+### Build Status
+- Vite build: SUCCESS
+- Pre-existing TypeScript errors (unrelated to redesign changes)
+
+## Files to Create
+1. `src/components/AppSidebar.tsx` - Sidebar navigation component
+2. `src/components/SidebarLayout.tsx` - Layout wrapper with sidebar
+3. `src/components/StatCard.tsx` - Stat card for metrics
+
+## Files to Modify
+1. `src/styles/app.css` - Add new sidebar colors (dark blue theme)
+2. `src/routes/__root.tsx` - Use sidebar layout for authenticated users
+3. `src/routes/dashboard.tsx` - Add stat cards at the top
+
+## Color Palette (Navy Blue Theme)
+Based on PAMS logo and design inspiration:
+- Sidebar background: `oklch(0.2 0.03 250)` (dark navy blue)
+- Sidebar foreground: `oklch(0.95 0 0)` (white text)
+- Sidebar accent: `oklch(0.3 0.035 250)` (lighter navy for hover)
+- Keep existing orange primary for accents
+
+## Implementation Notes
+- Keep mobile responsive (sidebar collapses on mobile)
+- Maintain existing Header for non-authenticated pages
+- Use Radix UI Sheet for mobile sidebar
+- Follow existing component patterns
+
+---
+
 # Rebrand from SoundStation to News Topic Monitor
 
 ## Problem Statement

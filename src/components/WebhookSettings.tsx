@@ -95,12 +95,12 @@ function WebhookCard({
           <div className="flex items-center gap-2">
             <h4 className="font-medium">{webhook.name}</h4>
             {webhook.isEnabled ? (
-              <span className="inline-flex items-center gap-1 text-xs bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded">
+              <span className="inline-flex items-center gap-1 text-xs bg-green-900 text-green-300 px-2 py-0.5 rounded">
                 <Check className="h-3 w-3" />
                 Enabled
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1 text-xs bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 px-2 py-0.5 rounded">
+              <span className="inline-flex items-center gap-1 text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">
                 <X className="h-3 w-3" />
                 Disabled
               </span>
@@ -152,7 +152,7 @@ function WebhookCard({
       </div>
 
       {webhook.lastError && (
-        <div className="flex items-start gap-2 text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 p-2 rounded">
+        <div className="flex items-start gap-2 text-sm text-red-400 bg-red-950/30 p-2 rounded">
           <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
           <span>Last error: {webhook.lastError}</span>
         </div>
@@ -433,8 +433,8 @@ export function WebhookSettings() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="h-20 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-lg" />
-            <div className="h-20 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-lg" />
+            <div className="h-20 bg-muted animate-pulse rounded-lg" />
+            <div className="h-20 bg-muted animate-pulse rounded-lg" />
           </div>
         </CardContent>
       </Card>

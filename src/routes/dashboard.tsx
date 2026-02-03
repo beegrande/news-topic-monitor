@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { Newspaper, Home, LayoutDashboard, Plus } from "lucide-react";
+import { Newspaper, Home, LayoutDashboard, Plus, FileText, TrendingUp, Bell } from "lucide-react";
 import { TopicCard } from "~/components/TopicCard";
 import { EmptyState } from "~/components/EmptyState";
 import { Page } from "~/components/Page";
@@ -9,10 +9,11 @@ import { CreateTopicDialog } from "~/components/CreateTopicDialog";
 import { ShareTopicDialog } from "~/components/ShareTopicDialog";
 import { RecommendedArticles } from "~/components/RecommendedArticles";
 import { TrendingTopicsCard } from "~/components/TrendingTopicsCard";
+import { StatCard, StatCardSkeleton } from "~/components/StatCard";
 import type { TopicWithArticleCount } from "~/data-access/topics";
 import { Button } from "~/components/ui/button";
 import { useTopics, useDeleteTopic, useSetTopicStatus } from "~/hooks/useTopics";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { authClient } from "~/lib/auth-client";
 
 export const Route = createFileRoute("/dashboard")({
@@ -125,6 +126,18 @@ function Dashboard() {
     );
   }
 
+  // Calculate stats from topics data
+  const stats = useMemo(() => {
+    if (!topics) return null;
+
+    const totalTopics = topics.length;
+    const activeTopics = topics.filter((t) => t.status === "active").length;
+    const totalArticles = topics.reduce((sum, t) => sum + (t.articleCount || 0), 0);
+    const topicsWithAlerts = topics.filter((t) => t.notificationEnabled).length;
+
+    return { totalTopics, activeTopics, totalArticles, topicsWithAlerts };
+  }, [topics]);
+
   return (
     <Page>
       <div className="space-y-8">
@@ -151,6 +164,45 @@ function Dashboard() {
             }
           />
         </div>
+
+        {/* Stats Cards */}
+        {isLoading ? (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <StatCardSkeleton />
+            <StatCardSkeleton />
+            <StatCardSkeleton />
+            <StatCardSkeleton />
+          </div>
+        ) : stats ? (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <StatCard
+              label="Total Topics"
+              value={stats.totalTopics}
+              description="Topics you're monitoring"
+              icon={Newspaper}
+            />
+            <StatCard
+              label="Active Topics"
+              value={stats.activeTopics}
+              description="Currently monitoring"
+              icon={TrendingUp}
+              variant={stats.activeTopics > 0 ? "success" : "default"}
+            />
+            <StatCard
+              label="Total Articles"
+              value={stats.totalArticles}
+              description="Articles collected"
+              icon={FileText}
+            />
+            <StatCard
+              label="Alert Topics"
+              value={stats.topicsWithAlerts}
+              description="Topics with notifications"
+              icon={Bell}
+              variant={stats.topicsWithAlerts > 0 ? "success" : "default"}
+            />
+          </div>
+        ) : null}
 
         {/* Recommendations Section */}
         {topics && topics.length > 0 && (

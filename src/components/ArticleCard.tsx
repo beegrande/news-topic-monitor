@@ -89,7 +89,7 @@ function CredibilityBadge({
   if (status === "failed") {
     return (
       <Tooltip content="Fact-check unavailable for this article">
-        <Badge variant="outline" className="text-xs bg-gray-100 text-gray-600 dark:bg-gray-800/50 dark:text-gray-400">
+        <Badge variant="outline" className="text-xs bg-gray-800/50 text-gray-400">
           <ShieldQuestion className="w-3 h-3 mr-1" />
           Unavailable
         </Badge>
@@ -157,12 +157,12 @@ function SentimentBadge({ sentiment }: { sentiment: ArticleSentiment | null }) {
     negative: {
       icon: TrendingDown,
       label: "Negative",
-      className: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+      className: "bg-red-900/30 text-red-400",
     },
     neutral: {
       icon: Minus,
       label: "Neutral",
-      className: "bg-gray-100 text-gray-600 dark:bg-gray-800/50 dark:text-gray-400",
+      className: "bg-gray-800/50 text-gray-400",
     },
   }[sentiment];
 
@@ -250,7 +250,7 @@ function FeedbackButtons({
         size="sm"
         className={`h-7 px-2 ${
           feedback?.userFeedback === "not_helpful"
-            ? "text-red-600 bg-red-50 dark:text-red-400 dark:bg-red-900/20"
+            ? "text-red-400 bg-red-900/20"
             : "text-muted-foreground hover:text-red-600"
         }`}
         onClick={(e) => handleFeedback(e, "not_helpful")}

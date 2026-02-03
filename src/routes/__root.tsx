@@ -20,6 +20,8 @@ import { Toaster } from "~/components/ui/sonner";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { Footer } from "~/components/Footer";
+import { SidebarLayout } from "~/components/SidebarLayout";
+import { authClient } from "~/lib/auth-client";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -78,6 +80,45 @@ function RootComponent() {
       <Outlet />
     </RootDocument>
   );
+}
+
+// Public routes that should always use the header/footer layout
+const publicRoutes = ["/", "/sign-in", "/sign-up", "/pricing", "/forgot-password", "/reset-password"];
+
+function AppContent({ children }: { children: React.ReactNode }) {
+  const { data: session, isPending } = authClient.useSession();
+  const routerState = useRouterState();
+  const pathname = routerState.location.pathname;
+
+  // Check if current route is a public route
+  const isPublicRoute = publicRoutes.some(route =>
+    route === pathname || pathname.startsWith(route + "/")
+  );
+
+  // Show loading state while checking session
+  if (isPending) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Use header/footer for public routes or unauthenticated users
+  if (isPublicRoute || !session?.user) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Use sidebar layout for authenticated users on app pages
+  return <SidebarLayout>{children}</SidebarLayout>;
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -159,11 +200,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-          <div className="min-h-screen bg-background">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </div>
+          <AppContent>{children}</AppContent>
           <TanStackRouterDevtools position="bottom-right" />
           <ReactQueryDevtools buttonPosition="bottom-left" />
           <Toaster />

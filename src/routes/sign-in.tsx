@@ -127,33 +127,33 @@ function RouteComponent() {
   return (
     <div className="container mx-auto relative min-h-[calc(100vh-3.5rem)] flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <aside
-        className="relative hidden h-full flex-col bg-gradient-to-br from-slate-50 to-red-50 dark:from-slate-900 dark:to-slate-800 p-12 text-slate-800 dark:text-white lg:flex border-r border-border overflow-hidden"
+        className="relative hidden h-full flex-col bg-background p-12 text-foreground lg:flex border-r border-border overflow-hidden"
         aria-label="NewsMonitor branding and platform information"
         role="complementary"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600/8 via-orange-600/6 to-red-600/4 dark:from-red-600/6 dark:to-orange-600/4" />
-        <div className="absolute top-32 right-32 h-48 w-48 rounded-full bg-gradient-to-br from-red-400/15 to-orange-400/10 dark:from-red-400/12 dark:to-orange-400/8 blur-2xl animate-pulse" />
-        <div className="absolute bottom-32 left-32 h-32 w-32 rounded-full bg-gradient-to-br from-orange-400/10 to-red-400/8 dark:from-orange-400/8 dark:to-red-400/6 blur-xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-primary/4 to-transparent" />
+        <div className="absolute top-32 right-32 h-48 w-48 rounded-full bg-gradient-to-br from-primary/15 to-primary/5 blur-2xl animate-pulse" />
+        <div className="absolute bottom-32 left-32 h-32 w-32 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 blur-xl" />
 
         <header className="relative z-20 flex items-center text-xl font-semibold">
           <div
-            className="mr-4 rounded-xl bg-gradient-to-br from-red-500/25 to-orange-500/20 p-3 backdrop-blur-sm border border-red-200/30 dark:border-white/20 shadow-lg"
+            className="mr-4 rounded-xl bg-primary/20 p-3 backdrop-blur-sm border border-primary/30 shadow-lg"
             aria-hidden="true"
           >
-            <LogIn className="h-6 w-6 text-red-600 dark:text-red-200" />
+            <LogIn className="h-6 w-6 text-primary" />
           </div>
-          <h1 className="bg-gradient-to-r from-slate-800 via-red-700 to-orange-700 dark:from-white dark:via-red-50 dark:to-orange-50 bg-clip-text text-transparent font-bold">
+          <h1 className="text-foreground font-bold">
             NewsMonitor
           </h1>
         </header>
 
         <main className="relative z-20 flex-1 flex flex-col justify-center">
           <div className="space-y-8 text-center">
-            <h2 className="text-4xl font-bold leading-tight bg-gradient-to-r from-slate-800 via-red-700 to-orange-700 dark:from-white dark:via-red-50 dark:to-orange-50 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold leading-tight text-foreground">
               Welcome back
             </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-lg opacity-75">
-              Continue building amazing tech content
+            <p className="text-muted-foreground text-lg">
+              Continue monitoring the news that matters
             </p>
 
             <div
@@ -163,34 +163,34 @@ function RouteComponent() {
             >
               <div className="text-center">
                 <div
-                  className="text-2xl font-bold text-slate-800 dark:text-white"
-                  aria-label="50,000 plus creators"
+                  className="text-2xl font-bold text-primary"
+                  aria-label="10,000 plus topics monitored"
                 >
-                  50K+
+                  10K+
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                  Creators
+                <div className="text-xs text-muted-foreground uppercase tracking-wide">
+                  Topics
                 </div>
               </div>
               <div className="text-center">
                 <div
-                  className="text-2xl font-bold text-slate-800 dark:text-white"
-                  aria-label="2 million plus videos"
+                  className="text-2xl font-bold text-primary"
+                  aria-label="1 million plus articles"
                 >
-                  2M+
+                  1M+
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                  Videos
+                <div className="text-xs text-muted-foreground uppercase tracking-wide">
+                  Articles
                 </div>
               </div>
               <div className="text-center">
                 <div
-                  className="text-2xl font-bold text-slate-800 dark:text-white"
+                  className="text-2xl font-bold text-primary"
                   aria-label="98 percent user satisfaction"
                 >
                   98%
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                <div className="text-xs text-muted-foreground uppercase tracking-wide">
                   Happy
                 </div>
               </div>
@@ -200,8 +200,8 @@ function RouteComponent() {
 
         <footer className="relative z-20 mt-auto opacity-60">
           <div className="text-center">
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Trusted by developers worldwide
+            <p className="text-sm text-muted-foreground">
+              Trusted by professionals worldwide
             </p>
           </div>
         </footer>
@@ -308,7 +308,7 @@ function RouteComponent() {
                   <Button
                     disabled={isLoading}
                     type="submit"
-                    className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] font-medium"
+                    className="w-full bg-primary hover:bg-primary/90 transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] font-medium"
                   >
                     {isLoading && (
                       <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />

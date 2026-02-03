@@ -271,7 +271,7 @@ export function ApiKeySettings() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded w-48" />
+          <div className="h-10 bg-muted animate-pulse rounded w-48" />
         </CardContent>
       </Card>
     );

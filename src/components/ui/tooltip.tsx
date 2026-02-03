@@ -14,8 +14,8 @@ export function Tooltip({ children, content, disabled = false }: TooltipProps) {
   }
 
   return (
-    <div 
-      className="relative inline-block"
+    <div
+      className="relative"
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
     >

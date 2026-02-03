@@ -86,7 +86,7 @@ function AccountDeletionSettings() {
 
   return (
     <>
-      <Card className="border-red-200 dark:border-red-800 bg-white dark:bg-gray-900">
+      <Card className="border-red-800 bg-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-red-600 dark:text-red-400">
             <AlertTriangle className="h-5 w-5" />
@@ -98,7 +98,7 @@ function AccountDeletionSettings() {
             <h3 className="font-semibold text-red-600 dark:text-red-400 mb-2">
               Delete Account
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               Permanently delete your account and all associated data. This
               action cannot be undone. All your songs, playlists, and
               subscription data will be permanently removed.
@@ -128,12 +128,12 @@ function AccountDeletionSettings() {
             </DialogDescription>
           </DialogHeader>
 
-          <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-lg p-4 my-4">
+          <div className="bg-red-950/30 border border-red-800 rounded-lg p-4 my-4">
             <div className="space-y-3">
-              <p className="text-sm text-gray-700 dark:text-gray-300">
+              <p className="text-sm text-muted-foreground">
                 The following data will be permanently deleted:
               </p>
-              <ul className="text-sm text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1">
+              <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1">
                 <li>All uploaded songs and audio files</li>
                 <li>All created playlists</li>
                 <li>All liked songs and hearts</li>
@@ -150,11 +150,11 @@ function AccountDeletionSettings() {
             <div>
               <Label
                 htmlFor="confirmEmail"
-                className="text-gray-700 dark:text-gray-300"
+                className="text-foreground"
               >
                 To confirm, type your email address:
               </Label>
-              <p className="text-sm text-gray-600 dark:text-gray-400 font-mono mb-2">
+              <p className="text-sm text-muted-foreground font-mono mb-2">
                 {session?.user?.email}
               </p>
               <Input
@@ -217,7 +217,7 @@ function EmailPreferencesSettings() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-10 bg-gray-200 animate-pulse rounded w-48" />
+          <div className="h-10 bg-muted animate-pulse rounded w-48" />
         </CardContent>
       </Card>
     );
@@ -287,7 +287,7 @@ function NotificationSettings() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-10 bg-gray-200 animate-pulse rounded w-48" />
+          <div className="h-10 bg-muted animate-pulse rounded w-48" />
         </CardContent>
       </Card>
     );
@@ -563,30 +563,30 @@ function SettingsPage() {
           {/* Subscription Status Skeleton */}
           <div className="bg-card rounded-lg border p-6">
             <div className="space-y-4">
-              <div className="h-6 bg-gray-200 animate-pulse rounded w-1/3" />
-              <div className="h-4 bg-gray-200 animate-pulse rounded w-2/3" />
-              <div className="h-4 bg-gray-200 animate-pulse rounded w-1/2" />
+              <div className="h-6 bg-muted animate-pulse rounded w-1/3" />
+              <div className="h-4 bg-muted animate-pulse rounded w-2/3" />
+              <div className="h-4 bg-muted animate-pulse rounded w-1/2" />
             </div>
           </div>
 
           {/* Pricing Cards Skeleton */}
           <div>
-            <div className="h-8 bg-gray-200 animate-pulse rounded w-1/4 mb-6" />
+            <div className="h-8 bg-muted animate-pulse rounded w-1/4 mb-6" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {Array.from({ length: 3 }).map((_, i) => (
                 <div key={i} className="bg-card rounded-lg border p-6">
                   <div className="space-y-4">
-                    <div className="h-8 bg-gray-200 animate-pulse rounded w-2/3" />
-                    <div className="h-12 bg-gray-200 animate-pulse rounded w-1/2" />
+                    <div className="h-8 bg-muted animate-pulse rounded w-2/3" />
+                    <div className="h-12 bg-muted animate-pulse rounded w-1/2" />
                     <div className="space-y-2">
                       {Array.from({ length: 4 }).map((_, j) => (
                         <div
                           key={j}
-                          className="h-4 bg-gray-200 animate-pulse rounded"
+                          className="h-4 bg-muted animate-pulse rounded"
                         />
                       ))}
                     </div>
-                    <div className="h-10 bg-gray-200 animate-pulse rounded" />
+                    <div className="h-10 bg-muted animate-pulse rounded" />
                   </div>
                 </div>
               ))}

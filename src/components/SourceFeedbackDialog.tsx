@@ -62,7 +62,7 @@ function StarRating({
               className={`w-6 h-6 transition-colors ${
                 isFilled
                   ? "fill-yellow-400 text-yellow-400"
-                  : "text-gray-300 dark:text-gray-600"
+                  : "text-gray-600"
               }`}
             />
           </button>

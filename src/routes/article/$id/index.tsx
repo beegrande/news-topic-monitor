@@ -73,12 +73,12 @@ function SentimentBadge({ sentiment }: { sentiment: ArticleSentiment | null }) {
     negative: {
       icon: TrendingDown,
       label: "Negative",
-      className: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+      className: "bg-red-900/30 text-red-400",
     },
     neutral: {
       icon: Minus,
       label: "Neutral",
-      className: "bg-gray-100 text-gray-600 dark:bg-gray-800/50 dark:text-gray-400",
+      className: "bg-gray-800/50 text-gray-400",
     },
   }[sentiment];
 
