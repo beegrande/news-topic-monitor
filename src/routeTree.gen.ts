@@ -17,7 +17,9 @@ import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SavedSearchesRouteImport } from './routes/saved-searches'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as RecommendationsRouteImport } from './routes/recommendations'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as IndexRouteImport } from './routes/index'
@@ -76,9 +78,19 @@ const SavedSearchesRoute = SavedSearchesRouteImport.update({
   path: '/saved-searches',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RecommendationsRoute = RecommendationsRouteImport.update({
   id: '/recommendations',
   path: '/recommendations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -171,7 +183,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/collections': typeof CollectionsRouteWithChildren
   '/dashboard': typeof DashboardRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/recommendations': typeof RecommendationsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/saved-searches': typeof SavedSearchesRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
@@ -199,7 +213,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/collections': typeof CollectionsRouteWithChildren
   '/dashboard': typeof DashboardRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/recommendations': typeof RecommendationsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/saved-searches': typeof SavedSearchesRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
@@ -228,7 +244,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/collections': typeof CollectionsRouteWithChildren
   '/dashboard': typeof DashboardRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/recommendations': typeof RecommendationsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/saved-searches': typeof SavedSearchesRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
@@ -258,7 +276,9 @@ export interface FileRouteTypes {
     | '/'
     | '/collections'
     | '/dashboard'
+    | '/forgot-password'
     | '/recommendations'
+    | '/reset-password'
     | '/saved-searches'
     | '/search'
     | '/settings'
@@ -286,7 +306,9 @@ export interface FileRouteTypes {
     | '/'
     | '/collections'
     | '/dashboard'
+    | '/forgot-password'
     | '/recommendations'
+    | '/reset-password'
     | '/saved-searches'
     | '/search'
     | '/settings'
@@ -314,7 +336,9 @@ export interface FileRouteTypes {
     | '/'
     | '/collections'
     | '/dashboard'
+    | '/forgot-password'
     | '/recommendations'
+    | '/reset-password'
     | '/saved-searches'
     | '/search'
     | '/settings'
@@ -343,7 +367,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CollectionsRoute: typeof CollectionsRouteWithChildren
   DashboardRoute: typeof DashboardRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   RecommendationsRoute: typeof RecommendationsRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   SavedSearchesRoute: typeof SavedSearchesRoute
   SearchRoute: typeof SearchRoute
   SettingsRoute: typeof SettingsRoute
@@ -424,11 +450,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SavedSearchesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/recommendations': {
       id: '/recommendations'
       path: '/recommendations'
       fullPath: '/recommendations'
       preLoaderRoute: typeof RecommendationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -579,7 +619,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CollectionsRoute: CollectionsRouteWithChildren,
   DashboardRoute: DashboardRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   RecommendationsRoute: RecommendationsRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   SavedSearchesRoute: SavedSearchesRoute,
   SearchRoute: SearchRoute,
   SettingsRoute: SettingsRoute,
