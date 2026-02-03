@@ -28,6 +28,9 @@ export const user = pgTable("user", {
   lastAlertSentAt: timestamp("last_alert_sent_at"),
   openaiApiKey: text("openai_api_key"),
   openaiApiKeyUpdatedAt: timestamp("openai_api_key_updated_at"),
+  anthropicApiKey: text("anthropic_api_key"),
+  anthropicApiKeyUpdatedAt: timestamp("anthropic_api_key_updated_at"),
+  newsProvider: text("news_provider").$default(() => "openai"), // "openai" | "anthropic"
   createdAt: timestamp("created_at")
     .$defaultFn(() => /* @__PURE__ */ new Date())
     .notNull(),
@@ -626,6 +629,8 @@ export type FactCheckStatus = "pending" | "checked" | "failed";
 export type EmailDigestFrequency = "daily" | "weekly" | "none";
 
 export type AlertMethod = "email" | "in_app" | "both";
+
+export type NewsProvider = "openai" | "anthropic";
 
 export type NotificationType = "new_article" | "digest" | "system";
 

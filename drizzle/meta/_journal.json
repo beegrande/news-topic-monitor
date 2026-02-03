@@ -183,6 +183,13 @@
       "when": 1770111776045,
       "tag": "0025_wild_sebastian_shaw",
       "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1770115309051,
+      "tag": "0026_early_wildside",
+      "breakpoints": true
     }
   ]
 }

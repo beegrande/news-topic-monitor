@@ -8,15 +8,24 @@ import {
   createArticleIfNotExists,
   linkArticleToTopic,
 } from "~/data-access/articles";
-import { getOpenAIApiKey } from "~/data-access/api-keys";
+import {
+  getOpenAIApiKey,
+  getAnthropicApiKey,
+  getNewsProvider,
+} from "~/data-access/api-keys";
 import { getMonitoringIntervalHours, type PlanType } from "~/config/planLimits";
 import { generateContentFingerprint } from "~/services/content-fingerprint";
 import {
   fetchNewsWithOpenAI,
   OpenAINewsError,
 } from "~/services/openai-news";
+import {
+  fetchNewsWithAnthropic,
+  AnthropicNewsError,
+} from "~/services/anthropic-news";
 import { parseLanguageList } from "~/services/language-detection";
 import { translateArticleSummary } from "~/services/translation";
+import type { NewsProvider } from "~/db/schema";
 
 export interface CheckTopicUpdatesResult {
   topicsChecked: number;
@@ -82,21 +91,29 @@ function filterArticlesBySource(
 }
 
 /**
- * Fetches news using OpenAI web search for the given keywords and languages.
+ * Fetches news using the specified provider for the given keywords and languages.
  * Transforms API response to FetchedArticle format.
  */
 async function fetchNewsForKeywords(
   apiKey: string,
   keywords: string,
-  languages: string[]
+  languages: string[],
+  provider: NewsProvider
 ): Promise<FetchedArticle[]> {
   try {
-    const articles = await fetchNewsWithOpenAI({
-      apiKey,
-      keywords,
-      languages,
-      maxArticles: 10,
-    });
+    const articles = provider === "anthropic"
+      ? await fetchNewsWithAnthropic({
+          apiKey,
+          keywords,
+          languages,
+          maxArticles: 10,
+        })
+      : await fetchNewsWithOpenAI({
+          apiKey,
+          keywords,
+          languages,
+          maxArticles: 10,
+        });
 
     const fetchedArticles: FetchedArticle[] = [];
 
@@ -121,8 +138,8 @@ async function fetchNewsForKeywords(
 
     return fetchedArticles;
   } catch (error) {
-    if (error instanceof OpenAINewsError) {
-      console.error(`OpenAI news error: ${error.message} (code: ${error.code})`);
+    if (error instanceof OpenAINewsError || error instanceof AnthropicNewsError) {
+      console.error(`News API error: ${error.message} (code: ${error.code})`);
       throw error;
     }
     console.error("Unexpected error fetching news:", error);
@@ -223,12 +240,13 @@ function isTopicDueForCheck(topic: TopicWithUserPlan): boolean {
  */
 async function processTopicUpdate(
   topic: TopicWithUserPlan,
-  apiKey: string
+  apiKey: string,
+  provider: NewsProvider
 ): Promise<{ articlesFound: number; articlesCreated: number }> {
   // Get topic's language preferences (default to English if not set)
   const topicLanguages = parseLanguageList(topic.languages);
 
-  const allArticles = await fetchNewsForKeywords(apiKey, topic.keywords, topicLanguages);
+  const allArticles = await fetchNewsForKeywords(apiKey, topic.keywords, topicLanguages, provider);
 
   // Apply source filtering based on topic settings
   const articles = filterArticlesBySource(
@@ -282,7 +300,7 @@ async function processTopicUpdate(
  *
  * This function:
  * 1. Finds all active topics that haven't been checked within their plan's interval
- * 2. For each topic, fetches news matching the topic's keywords using OpenAI
+ * 2. For each topic, fetches news matching the topic's keywords using the user's selected provider
  * 3. Creates new articles and links them to the topic
  * 4. Updates the topic's lastCheckedAt timestamp
  *
@@ -317,14 +335,24 @@ export async function checkTopicUpdatesUseCase(
 
   // Process topics for each user
   for (const [userId, userTopics] of topicsByUser) {
-    // Get the user's OpenAI API key
-    const apiKey = await getOpenAIApiKey(userId);
+    // Get the user's selected provider and corresponding API key
+    const provider = await getNewsProvider(userId);
+    let apiKey: string | null;
+    let providerName: string;
+
+    if (provider === "anthropic") {
+      apiKey = await getAnthropicApiKey(userId);
+      providerName = "Anthropic";
+    } else {
+      apiKey = await getOpenAIApiKey(userId);
+      providerName = "OpenAI";
+    }
 
     if (!apiKey) {
       // User hasn't configured their API key - skip their topics
       for (const topic of userTopics) {
-        result.errors.push(`Topic ${topic.id}: User has no OpenAI API key configured`);
-        await updateTopicError(topic.id, "OpenAI API key not configured");
+        result.errors.push(`Topic ${topic.id}: User has no ${providerName} API key configured`);
+        await updateTopicError(topic.id, `${providerName} API key not configured`);
       }
       continue;
     }
@@ -332,7 +360,7 @@ export async function checkTopicUpdatesUseCase(
     // Process each topic for this user
     for (const topic of userTopics) {
       try {
-        const { articlesFound, articlesCreated } = await processTopicUpdate(topic, apiKey);
+        const { articlesFound, articlesCreated } = await processTopicUpdate(topic, apiKey, provider);
         result.topicsChecked++;
         result.articlesFound += articlesFound;
         result.articlesCreated += articlesCreated;

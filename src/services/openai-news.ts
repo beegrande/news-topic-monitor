@@ -82,20 +82,33 @@ IMPORTANT: Return ONLY valid JSON, no markdown formatting or code blocks. The re
     // Parse the JSON response
     let parsed: { articles: OpenAINewsArticle[] };
     try {
-      // Clean up the response - remove markdown code blocks if present
-      let cleanedText = outputText.trim();
-      if (cleanedText.startsWith("```json")) {
-        cleanedText = cleanedText.slice(7);
-      }
-      if (cleanedText.startsWith("```")) {
-        cleanedText = cleanedText.slice(3);
-      }
-      if (cleanedText.endsWith("```")) {
-        cleanedText = cleanedText.slice(0, -3);
-      }
-      cleanedText = cleanedText.trim();
+      // Extract JSON from the response - it may be wrapped in markdown or have preamble text
+      let jsonText = outputText;
 
-      parsed = JSON.parse(cleanedText);
+      // Try to extract JSON from markdown code block first
+      const codeBlockMatch = outputText.match(/```(?:json)?\s*([\s\S]*?)```/);
+      if (codeBlockMatch) {
+        jsonText = codeBlockMatch[1].trim();
+      } else {
+        // Try to find JSON object starting with {"articles"
+        const jsonStartIndex = outputText.indexOf('{"articles"');
+        if (jsonStartIndex !== -1) {
+          // Find the matching closing brace
+          let braceCount = 0;
+          let jsonEndIndex = jsonStartIndex;
+          for (let i = jsonStartIndex; i < outputText.length; i++) {
+            if (outputText[i] === '{') braceCount++;
+            if (outputText[i] === '}') braceCount--;
+            if (braceCount === 0) {
+              jsonEndIndex = i + 1;
+              break;
+            }
+          }
+          jsonText = outputText.slice(jsonStartIndex, jsonEndIndex);
+        }
+      }
+
+      parsed = JSON.parse(jsonText.trim());
     } catch {
       console.error("Failed to parse OpenAI response:", outputText);
       throw new OpenAINewsError(
@@ -186,11 +199,15 @@ export async function testOpenAIApiKey(apiKey: string): Promise<boolean> {
     await client.models.list();
     return true;
   } catch (error) {
-    if (error instanceof OpenAI.APIError && error.status === 401) {
-      return false;
+    if (error instanceof OpenAI.APIError) {
+      // Only return false for authentication errors
+      if (error.status === 401) {
+        return false;
+      }
+      // For other errors (rate limit, billing, etc.), the key is likely valid
+      return true;
     }
-    // For other errors (rate limit, etc.), the key might still be valid
-    // but we'll return false to be safe
-    return false;
+    // For unexpected errors, assume the key might be valid
+    return true;
   }
 }
