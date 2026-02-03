@@ -1,25 +1,21 @@
 import {
   findActiveTopicsDueForCheck,
   updateTopicLastChecked,
+  updateTopicError,
   type TopicWithUserPlan,
 } from "~/data-access/topics";
 import {
   createArticleIfNotExists,
   linkArticleToTopic,
 } from "~/data-access/articles";
+import { getOpenAIApiKey } from "~/data-access/api-keys";
 import { getMonitoringIntervalHours, type PlanType } from "~/config/planLimits";
 import { generateContentFingerprint } from "~/services/content-fingerprint";
 import {
-  fetchNewsFromApi,
-  RateLimitError,
-  NewsApiError,
-  type NewsApiArticle,
-} from "~/services/news-api";
-import {
-  detectArticleLanguage,
-  parseLanguageList,
-  isNewsApiLanguageSupported,
-} from "~/services/language-detection";
+  fetchNewsWithOpenAI,
+  OpenAINewsError,
+} from "~/services/openai-news";
+import { parseLanguageList } from "~/services/language-detection";
 import { translateArticleSummary } from "~/services/translation";
 
 export interface CheckTopicUpdatesResult {
@@ -86,75 +82,52 @@ function filterArticlesBySource(
 }
 
 /**
- * Fetches news from NewsAPI for the given keywords and languages.
+ * Fetches news using OpenAI web search for the given keywords and languages.
  * Transforms API response to FetchedArticle format.
  */
 async function fetchNewsForKeywords(
+  apiKey: string,
   keywords: string,
   languages: string[]
 ): Promise<FetchedArticle[]> {
-  const allArticles: FetchedArticle[] = [];
+  try {
+    const articles = await fetchNewsWithOpenAI({
+      apiKey,
+      keywords,
+      languages,
+      maxArticles: 10,
+    });
 
-  // Calculate the date for "from" parameter (last 7 days to get recent articles)
-  const fromDate = new Date();
-  fromDate.setDate(fromDate.getDate() - 7);
-  const fromDateStr = fromDate.toISOString().split("T")[0];
+    const fetchedArticles: FetchedArticle[] = [];
 
-  // Fetch for each language
-  for (const language of languages) {
-    // Only fetch for NewsAPI-supported languages
-    if (!isNewsApiLanguageSupported(language)) {
-      continue;
-    }
+    for (const article of articles) {
+      // Translate summary if not in English
+      const translatedSummary = await translateArticleSummary(
+        article.summary || undefined,
+        article.language
+      );
 
-    try {
-      const newsArticles = await fetchNewsFromApi({
-        query: keywords,
-        pageSize: Math.ceil(20 / languages.length), // Split across languages
-        sortBy: "publishedAt",
-        from: fromDateStr,
-        language,
+      fetchedArticles.push({
+        title: article.title,
+        url: article.url,
+        source: article.source,
+        summary: article.summary || undefined,
+        publishedAt: article.publishedAt ? new Date(article.publishedAt) : undefined,
+        language: article.language,
+        originalLanguage: article.language !== "en" ? article.language : undefined,
+        translatedSummary: translatedSummary || undefined,
       });
-
-      for (const article of newsArticles) {
-        // Detect actual language of content (use NewsAPI language as fallback)
-        const languageResult = detectArticleLanguage(
-          article.title,
-          article.description || article.content,
-          language // Use the requested language as fallback
-        );
-
-        // Translate summary if not in English
-        const translatedSummary = await translateArticleSummary(
-          article.description || undefined,
-          languageResult.language
-        );
-
-        allArticles.push({
-          title: article.title,
-          url: article.url,
-          source: article.source.name,
-          summary: article.description || undefined,
-          publishedAt: article.publishedAt ? new Date(article.publishedAt) : undefined,
-          language: languageResult.language,
-          originalLanguage: languageResult.language !== "en" ? languageResult.language : undefined,
-          translatedSummary: translatedSummary || undefined,
-        });
-      }
-    } catch (error) {
-      if (error instanceof RateLimitError) {
-        console.warn(`News API rate limit hit for language ${language}: ${error.message}`);
-        continue;
-      }
-      if (error instanceof NewsApiError) {
-        console.error(`News API error for language ${language}: ${error.message} (code: ${error.code})`);
-        continue;
-      }
-      console.error(`Unexpected error fetching news for language ${language}:`, error);
     }
-  }
 
-  return allArticles;
+    return fetchedArticles;
+  } catch (error) {
+    if (error instanceof OpenAINewsError) {
+      console.error(`OpenAI news error: ${error.message} (code: ${error.code})`);
+      throw error;
+    }
+    console.error("Unexpected error fetching news:", error);
+    throw error;
+  }
 }
 
 /**
@@ -249,12 +222,13 @@ function isTopicDueForCheck(topic: TopicWithUserPlan): boolean {
  * Processes a single topic: fetches news and stores new articles.
  */
 async function processTopicUpdate(
-  topic: TopicWithUserPlan
+  topic: TopicWithUserPlan,
+  apiKey: string
 ): Promise<{ articlesFound: number; articlesCreated: number }> {
   // Get topic's language preferences (default to English if not set)
   const topicLanguages = parseLanguageList(topic.languages);
 
-  const allArticles = await fetchNewsForKeywords(topic.keywords, topicLanguages);
+  const allArticles = await fetchNewsForKeywords(apiKey, topic.keywords, topicLanguages);
 
   // Apply source filtering based on topic settings
   const articles = filterArticlesBySource(
@@ -308,7 +282,7 @@ async function processTopicUpdate(
  *
  * This function:
  * 1. Finds all active topics that haven't been checked within their plan's interval
- * 2. For each topic, fetches news matching the topic's keywords
+ * 2. For each topic, fetches news matching the topic's keywords using OpenAI
  * 3. Creates new articles and links them to the topic
  * 4. Updates the topic's lastCheckedAt timestamp
  *
@@ -333,15 +307,40 @@ export async function checkTopicUpdatesUseCase(
     .filter(isTopicDueForCheck)
     .filter(isWithinSchedule);
 
+  // Group topics by user to efficiently fetch API keys
+  const topicsByUser = new Map<string, TopicWithUserPlan[]>();
   for (const topic of topicsDueForCheck) {
-    try {
-      const { articlesFound, articlesCreated } = await processTopicUpdate(topic);
-      result.topicsChecked++;
-      result.articlesFound += articlesFound;
-      result.articlesCreated += articlesCreated;
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      result.errors.push(`Topic ${topic.id}: ${errorMessage}`);
+    const userTopics = topicsByUser.get(topic.userId) || [];
+    userTopics.push(topic);
+    topicsByUser.set(topic.userId, userTopics);
+  }
+
+  // Process topics for each user
+  for (const [userId, userTopics] of topicsByUser) {
+    // Get the user's OpenAI API key
+    const apiKey = await getOpenAIApiKey(userId);
+
+    if (!apiKey) {
+      // User hasn't configured their API key - skip their topics
+      for (const topic of userTopics) {
+        result.errors.push(`Topic ${topic.id}: User has no OpenAI API key configured`);
+        await updateTopicError(topic.id, "OpenAI API key not configured");
+      }
+      continue;
+    }
+
+    // Process each topic for this user
+    for (const topic of userTopics) {
+      try {
+        const { articlesFound, articlesCreated } = await processTopicUpdate(topic, apiKey);
+        result.topicsChecked++;
+        result.articlesFound += articlesFound;
+        result.articlesCreated += articlesCreated;
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        result.errors.push(`Topic ${topic.id}: ${errorMessage}`);
+        await updateTopicError(topic.id, errorMessage);
+      }
     }
   }
 

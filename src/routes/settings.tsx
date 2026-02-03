@@ -50,6 +50,7 @@ import {
 } from "~/components/ui/select";
 import type { EmailDigestFrequency } from "~/db/schema";
 import { WebhookSettings } from "~/components/WebhookSettings";
+import { ApiKeySettings } from "~/components/ApiKeySettings";
 
 export const Route = createFileRoute("/settings")({
   component: SettingsPage,
@@ -625,6 +626,11 @@ function SettingsPage() {
         {/* Profile Settings */}
         <section>
           <ProfileSettings />
+        </section>
+
+        {/* API Keys */}
+        <section>
+          <ApiKeySettings />
         </section>
 
         {/* Email Preferences */}

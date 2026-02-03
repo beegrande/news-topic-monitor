@@ -26,6 +26,8 @@ export const user = pgTable("user", {
   alertsEnabled: boolean("alerts_enabled").$default(() => true).notNull(),
   alertMethod: text("alert_method").$default(() => "email").notNull(),
   lastAlertSentAt: timestamp("last_alert_sent_at"),
+  openaiApiKey: text("openai_api_key"),
+  openaiApiKeyUpdatedAt: timestamp("openai_api_key_updated_at"),
   createdAt: timestamp("created_at")
     .$defaultFn(() => /* @__PURE__ */ new Date())
     .notNull(),
