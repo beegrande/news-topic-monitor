@@ -646,6 +646,26 @@ export async function findArticlesWithoutSentiment(
 }
 
 /**
+ * Find articles that don't have content fetched yet.
+ * Used by the content fetching cron job.
+ */
+export async function findArticlesWithoutContent(
+  limit: number = 50
+): Promise<Article[]> {
+  return await database
+    .select()
+    .from(article)
+    .where(
+      and(
+        sql`${article.content} IS NULL`,
+        eq(article.isArchived, false)
+      )
+    )
+    .orderBy(desc(article.createdAt))
+    .limit(limit);
+}
+
+/**
  * Get distinct sentiments for a topic (for filter dropdown).
  */
 export async function getDistinctSentimentsByTopicId(

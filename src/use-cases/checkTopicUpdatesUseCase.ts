@@ -7,7 +7,9 @@ import {
 import {
   createArticleIfNotExists,
   linkArticleToTopic,
+  updateArticle,
 } from "~/data-access/articles";
+import { fetchArticleContent } from "~/services/article-content-scraper";
 import {
   getOpenAIApiKey,
   getAnthropicApiKey,
@@ -283,6 +285,16 @@ async function processTopicUpdate(
 
     if (created) {
       articlesCreated++;
+
+      // Quick content fetch attempt (non-blocking on failure)
+      try {
+        const contentResult = await fetchArticleContent(articleData.url);
+        if (contentResult.success && contentResult.content) {
+          await updateArticle(article.id, { content: contentResult.content });
+        }
+      } catch {
+        // Silent failure - async cron job will retry later
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import {
   Home,
@@ -29,26 +29,50 @@ import { useTopics } from "~/hooks/useTopics";
 const ARTICLES_PER_PAGE = 20;
 
 export const Route = createFileRoute("/search")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    q: (search.q as string) || undefined,
+  }),
   component: SearchPage,
 });
 
 function SearchPage() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [debouncedQuery, setDebouncedQuery] = useState("");
+  const { q } = Route.useSearch();
+  const navigate = useNavigate();
+
+  const [searchQuery, setSearchQuery] = useState(q || "");
+  const [debouncedQuery, setDebouncedQuery] = useState(q || "");
   const [selectedSource, setSelectedSource] = useState<string | undefined>();
   const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>([]);
   const [dateFrom, setDateFrom] = useState<string>("");
   const [dateTo, setDateTo] = useState<string>("");
   const [offset, setOffset] = useState(0);
 
-  // Debounce search query
+  // Sync from URL param on mount or when q changes
+  useEffect(() => {
+    if (q !== undefined && q !== searchQuery) {
+      setSearchQuery(q);
+      setDebouncedQuery(q);
+    }
+  }, [q]);
+
+  // Debounce search query and sync to URL
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(searchQuery);
       setOffset(0); // Reset pagination on new search
+
+      // Sync URL with search query
+      const newQ = searchQuery || undefined;
+      if (newQ !== q) {
+        navigate({
+          to: "/search",
+          search: { q: newQ },
+          replace: true,
+        });
+      }
     }, 300);
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, q, navigate]);
 
   // Fetch search results
   const {

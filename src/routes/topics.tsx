@@ -35,6 +35,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "~/components/ui/button";
 import { Badge } from "~/components/ui/badge";
 import { Input } from "~/components/ui/input";
+import { ClickableKeyword } from "~/components/ClickableKeyword";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -493,10 +494,12 @@ function TopicsPage() {
 
                   <div className="flex flex-wrap gap-1 mb-4">
                     {topic.keywords.split(",").slice(0, 3).map((keyword, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">
-                        <Tag className="w-3 h-3 mr-1" />
-                        {keyword.trim()}
-                      </Badge>
+                      <ClickableKeyword
+                        key={idx}
+                        keyword={keyword.trim()}
+                        className="text-xs"
+                        showIcon
+                      />
                     ))}
                     {topic.keywords.split(",").length > 3 && (
                       <Badge variant="outline" className="text-xs">

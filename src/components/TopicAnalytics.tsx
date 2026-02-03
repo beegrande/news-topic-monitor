@@ -24,6 +24,7 @@ import {
 } from "~/components/ui/card";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
+import { ClickableKeyword } from "~/components/ClickableKeyword";
 import { X, ExternalLink, Newspaper } from "lucide-react";
 import { getArticlesByTopicQuery } from "~/queries/articles";
 import type {
@@ -681,19 +682,13 @@ export function TrendingKeywordsCard({ data }: { data: KeywordCount[] }) {
                   ? "text-sm"
                   : "text-xs";
             return (
-              <Badge
+              <ClickableKeyword
                 key={keyword.keyword}
-                variant="secondary"
-                className={`${size} transition-colors hover:bg-primary/20`}
-                style={{
-                  opacity: 0.5 + intensity * 0.5,
-                }}
-              >
-                {keyword.keyword}
-                <span className="ml-1 text-muted-foreground">
-                  ({keyword.count})
-                </span>
-              </Badge>
+                keyword={keyword.keyword}
+                count={keyword.count}
+                className={size}
+                style={{ opacity: 0.5 + intensity * 0.5 }}
+              />
             );
           })}
         </div>

@@ -122,7 +122,7 @@ function SavedSearchesPage() {
       params.set("to", new Date(savedSearch.dateTo).toISOString().split("T")[0]);
     }
 
-    navigate({ to: "/search", search: params.toString() ? `?${params.toString()}` : undefined });
+    navigate({ to: "/search", search: { q: savedSearch.query } });
   };
 
   const clearSearch = () => {
@@ -222,7 +222,7 @@ function SavedSearchesPage() {
             title="No saved searches yet"
             description="Save searches from the search page to quickly access them later. Saved searches preserve your query and all filters."
             actionLabel="Go to Search"
-            onAction={() => navigate({ to: "/search" })}
+            onAction={() => navigate({ to: "/search", search: { q: undefined } })}
           />
         )}
 

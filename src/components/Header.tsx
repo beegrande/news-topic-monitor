@@ -199,7 +199,7 @@ export function Header() {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link to="/search">
+                      <Link to="/search" search={{ q: undefined }}>
                         <Search className="mr-2 h-4 w-4" />
                         <span>Search</span>
                       </Link>

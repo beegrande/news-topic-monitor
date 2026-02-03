@@ -32,6 +32,7 @@ import { Route as TopicIdAnalyticsRouteImport } from './routes/topic/$id/analyti
 import { Route as ApiStripeWebhookRouteImport } from './routes/api/stripe/webhook'
 import { Route as ApiCronSendDigestsRouteImport } from './routes/api/cron/send-digests'
 import { Route as ApiCronSendAlertsRouteImport } from './routes/api/cron/send-alerts'
+import { Route as ApiCronFetchArticleContentRouteImport } from './routes/api/cron/fetch-article-content'
 import { Route as ApiCronCheckTopicsRouteImport } from './routes/api/cron/check-topics'
 import { Route as ApiCronArchiveArticlesRouteImport } from './routes/api/cron/archive-articles'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -153,6 +154,12 @@ const ApiCronSendAlertsRoute = ApiCronSendAlertsRouteImport.update({
   path: '/api/cron/send-alerts',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCronFetchArticleContentRoute =
+  ApiCronFetchArticleContentRouteImport.update({
+    id: '/api/cron/fetch-article-content',
+    path: '/api/cron/fetch-article-content',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiCronCheckTopicsRoute = ApiCronCheckTopicsRouteImport.update({
   id: '/api/cron/check-topics',
   path: '/api/cron/check-topics',
@@ -198,6 +205,7 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/archive-articles': typeof ApiCronArchiveArticlesRoute
   '/api/cron/check-topics': typeof ApiCronCheckTopicsRoute
+  '/api/cron/fetch-article-content': typeof ApiCronFetchArticleContentRoute
   '/api/cron/send-alerts': typeof ApiCronSendAlertsRoute
   '/api/cron/send-digests': typeof ApiCronSendDigestsRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
@@ -228,6 +236,7 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/archive-articles': typeof ApiCronArchiveArticlesRoute
   '/api/cron/check-topics': typeof ApiCronCheckTopicsRoute
+  '/api/cron/fetch-article-content': typeof ApiCronFetchArticleContentRoute
   '/api/cron/send-alerts': typeof ApiCronSendAlertsRoute
   '/api/cron/send-digests': typeof ApiCronSendDigestsRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
@@ -259,6 +268,7 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/archive-articles': typeof ApiCronArchiveArticlesRoute
   '/api/cron/check-topics': typeof ApiCronCheckTopicsRoute
+  '/api/cron/fetch-article-content': typeof ApiCronFetchArticleContentRoute
   '/api/cron/send-alerts': typeof ApiCronSendAlertsRoute
   '/api/cron/send-digests': typeof ApiCronSendDigestsRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
@@ -291,6 +301,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/cron/archive-articles'
     | '/api/cron/check-topics'
+    | '/api/cron/fetch-article-content'
     | '/api/cron/send-alerts'
     | '/api/cron/send-digests'
     | '/api/stripe/webhook'
@@ -321,6 +332,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/cron/archive-articles'
     | '/api/cron/check-topics'
+    | '/api/cron/fetch-article-content'
     | '/api/cron/send-alerts'
     | '/api/cron/send-digests'
     | '/api/stripe/webhook'
@@ -351,6 +363,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/cron/archive-articles'
     | '/api/cron/check-topics'
+    | '/api/cron/fetch-article-content'
     | '/api/cron/send-alerts'
     | '/api/cron/send-digests'
     | '/api/stripe/webhook'
@@ -382,6 +395,7 @@ export interface RootRouteChildren {
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiCronArchiveArticlesRoute: typeof ApiCronArchiveArticlesRoute
   ApiCronCheckTopicsRoute: typeof ApiCronCheckTopicsRoute
+  ApiCronFetchArticleContentRoute: typeof ApiCronFetchArticleContentRoute
   ApiCronSendAlertsRoute: typeof ApiCronSendAlertsRoute
   ApiCronSendDigestsRoute: typeof ApiCronSendDigestsRoute
   ApiStripeWebhookRoute: typeof ApiStripeWebhookRoute
@@ -555,6 +569,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiCronSendAlertsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/cron/fetch-article-content': {
+      id: '/api/cron/fetch-article-content'
+      path: '/api/cron/fetch-article-content'
+      fullPath: '/api/cron/fetch-article-content'
+      preLoaderRoute: typeof ApiCronFetchArticleContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/cron/check-topics': {
       id: '/api/cron/check-topics'
       path: '/api/cron/check-topics'
@@ -634,6 +655,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiCronArchiveArticlesRoute: ApiCronArchiveArticlesRoute,
   ApiCronCheckTopicsRoute: ApiCronCheckTopicsRoute,
+  ApiCronFetchArticleContentRoute: ApiCronFetchArticleContentRoute,
   ApiCronSendAlertsRoute: ApiCronSendAlertsRoute,
   ApiCronSendDigestsRoute: ApiCronSendDigestsRoute,
   ApiStripeWebhookRoute: ApiStripeWebhookRoute,
