@@ -2,50 +2,26 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Architecture Overview
+## Project Overview
 
-This is a TanStack Start full-stack React application with the following key architectural patterns:
+NewsMonitor is a news topic monitoring application that allows users to track news articles based on custom topics and keywords. Users create topics with keywords, and the system fetches and analyzes relevant articles from news APIs.
 
-### Tech Stack
+## Tech Stack
 
-- **Framework**: TanStack Start (full-stack React framework)
-- **Database**: PostgreSQL with Drizzle ORM for type-safe queries
-- **Authentication**: Better Auth with email/password authentication
-- **Styling**: Tailwind CSS with Radix UI components
-- **File Storage**: AWS S3/R2 with presigned URL uploads
-- **Payments**: Stripe integration for subscriptions
-- **TypeScript**: Full type safety throughout
-
-### Project Structure
-
-- `src/routes/` - File-based routing with TanStack Router
-- `src/components/` - Reusable React components with `ui/` subfolder for base components
-- `src/db/` - Database configuration and schema definitions
-- `src/data-access/` - Data access layer functions
-- `src/fn/` - Business logic functions and middleware
-- `src/hooks/` - Custom React hooks for data fetching and state management
-- `src/queries/` - TanStack Query definitions for server state
-- `src/utils/` - Utility functions and helpers
-- `src/use-cases/` - Application use cases and business logic
-
-### Database Schema
-
-Core entities: `user`, `song`, `playlist`, `heart` (likes), with subscription and authentication tables. Users can upload songs, create playlists, and have subscription plans (free/basic/pro).
-
-### Key Patterns
-
-- **Data Fetching**: Uses TanStack Query with custom hooks pattern
-- **Authentication**: Better Auth with session management
-- **File Uploads**: Presigned URLs for direct S3/R2 uploads
-- **Subscriptions**: Stripe-based with plan limits enforcement
-- **Type Safety**: Full TypeScript with Drizzle ORM schema inference
+- **Framework**: TanStack Start (full-stack React 19 framework)
+- **Database**: PostgreSQL with Drizzle ORM
+- **Authentication**: Better Auth with email/password
+- **Styling**: Tailwind CSS v4 with Radix UI components
+- **Payments**: Stripe subscriptions (free/basic/pro tiers)
+- **Email**: Resend for notifications and digests
+- **News Data**: NewsAPI integration
 
 ## Common Development Commands
 
 ```bash
 # Development
 npm run dev                 # Start development server on port 3000
-npm run build              # Build for production (includes type checking)
+npm run build              # Build for production (includes TypeScript check)
 npm run start              # Start production server
 
 # Database
@@ -55,37 +31,82 @@ npm run db:migrate         # Run database migrations
 npm run db:generate        # Generate new migration files
 npm run db:studio          # Open Drizzle Studio for database management
 
-# Payments (if needed)
-npm run stripe:listen      # Listen for Stripe webhooks in development
+# Stripe (for payment testing)
+npm run stripe:listen      # Listen for Stripe webhooks locally
 ```
 
-## Environment Setup
+## Architecture Overview
 
-1. Copy `.env.example` to `.env` and configure:
-   - Database connection (PostgreSQL)
-   - Better Auth secrets
-   - Stripe keys (for payments)
-   - AWS S3/R2 credentials (for file storage)
+The application follows a strict layered architecture:
 
-2. Start database and run migrations:
-   ```bash
-   npm run db:up
-   npm run db:migrate
-   ```
+```
+Routes → Components → Hooks → Queries → Fn → Use Cases → Data Access
+```
 
-## Development Notes
+### Layer Responsibilities
 
-- Uses TanStack Start's file-based routing system
-- Database schema uses UUIDs for primary keys
-- File uploads go directly to cloud storage via presigned URLs
-- Subscription plans control feature access (playlists, upload limits)
-- Build process includes TypeScript type checking
+- **`src/routes/`** - File-based routing with TanStack Router, page composition, route loaders
+- **`src/components/`** - Reusable React components; `ui/` subfolder contains Radix-based primitives
+- **`src/hooks/`** - Custom React hooks wrapping TanStack Query mutations/queries with UI logic (toasts, navigation)
+- **`src/queries/`** - TanStack Query definitions with query keys and options
+- **`src/fn/`** - Server functions with Zod validation and authentication middleware
+- **`src/use-cases/`** - Complex business logic orchestrating multiple data operations
+- **`src/data-access/`** - Direct Drizzle ORM database queries
+- **`src/services/`** - External service integrations (news API, sentiment analysis, email)
 
-## Additional Information
+### Key Patterns
 
-- **Authentication** - please see `docs/authentication.md` for information about how authentication is setup on this project.
-- **architecture** - please see `docs/architecture.md` for information about how the code is setup in a layered architecture on this project.
-- **subscriptions** - please see `docs/subscriptions.md` for learn about how user plans and subscriptions are setup.
-- **tanstack** - please see `docs/tanstack.md` for techincal implenetation detail on how to create tanstack start routes or server functions.
-- **ux** - please see `docs/ux.md` for user experience guidelines to make sure this app feels consistent.
-- **file-uploads** - please see `docs/file-uploads.md` for more information about how file uploads work in our code base
+- **Server Functions**: Created with `createServerFn()` in `src/fn/`, use `authenticatedMiddleware` for protected endpoints
+- **Data Fetching**: Route loaders use `queryClient.ensureQueryData()` to prefetch; components use `useQuery()` with query definitions from `src/queries/`
+- **Mutations**: Hooks in `src/hooks/` wrap server functions with `useMutation()`, handle success/error toasts and navigation
+
+## Database Schema
+
+Core domain entities in `src/db/schema.ts`:
+
+- **`topic`** - User-defined monitoring topics with keywords, frequency settings, notification preferences
+- **`article`** - Fetched news articles with sentiment analysis, fact-checking, geolocation
+- **`articleTopic`** - Junction table linking articles to topics with relevance scores
+- **`collection`** - User-created groups of topics
+- **`notification`** - In-app notifications for new articles
+- **`team`**, **`teamMember`**, **`teamInvitation`** - Team collaboration
+- **`webhook`** - External webhook integrations for article notifications
+- **`savedSearch`** - Saved article search queries
+- **`sourceCredibility`** - News source credibility ratings
+
+User-related: `user`, `session`, `account`, `verification` (Better Auth tables)
+
+Legacy tables (from template, not actively used): `song`, `playlist`, `playlistSong`, `heart`
+
+## Subscription Plans
+
+Defined in `src/config/planLimits.ts`:
+
+| Plan  | Monitoring Frequency | Topics | Collections |
+|-------|---------------------|--------|-------------|
+| Free  | Daily (24h)         | 5      | 1           |
+| Basic | 4x/day (6h)         | 50     | 5           |
+| Pro   | Hourly (1h)         | Unlimited | Unlimited |
+
+## Key Services
+
+- **`src/services/news-api.ts`** - NewsAPI integration for fetching articles
+- **`src/services/sentiment.ts`** - Sentiment analysis using natural language processing
+- **`src/services/relevance-scoring.ts`** - Article relevance scoring for topics
+- **`src/services/email.ts`** - Email notifications via Resend
+- **`src/services/content-fingerprint.ts`** - Duplicate article detection
+
+## Cron Endpoints
+
+- **`/api/cron/check-topics`** - Fetches new articles for active topics
+- **`/api/cron/send-digests`** - Sends email digests to users
+
+## Additional Documentation
+
+- **`docs/architecture.md`** - Detailed layered architecture explanation
+- **`docs/tanstack.md`** - TanStack Start routing and server function patterns
+- **`docs/authentication.md`** - Better Auth setup
+- **`docs/subscriptions.md`** - Stripe integration details
+- **`docs/file-uploads.md`** - S3/R2 presigned URL uploads
+- **`docs/ux.md`** - UX guidelines
+- **`docs/theme.md`** - Styling guidelines
