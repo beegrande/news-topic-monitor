@@ -1,4 +1,4 @@
-import { eq, desc, asc, and, inArray, sql, gte, lte, isNull } from "drizzle-orm";
+import { eq, desc, asc, and, inArray, sql, gte, lt, lte, isNull } from "drizzle-orm";
 import { database } from "~/db";
 import {
   article,
@@ -137,6 +137,8 @@ export interface FindArticlesByTopicOptions {
   sentiment?: ArticleSentiment;
   country?: string;
   language?: string;
+  dateFrom?: Date;
+  dateTo?: Date;
 }
 
 export async function findArticlesByTopicId(
@@ -171,6 +173,8 @@ export async function findArticlesByTopicIdWithOptions(
     sentiment,
     country,
     language,
+    dateFrom,
+    dateTo,
   } = options;
 
   // Build where conditions - exclude archived articles by default
@@ -190,6 +194,14 @@ export async function findArticlesByTopicIdWithOptions(
 
   if (language) {
     conditions.push(eq(article.language, language));
+  }
+
+  if (dateFrom) {
+    conditions.push(gte(article.publishedAt, dateFrom));
+  }
+
+  if (dateTo) {
+    conditions.push(lt(article.publishedAt, dateTo));
   }
 
   // Build order by clause based on sortBy
@@ -232,7 +244,9 @@ export async function countArticlesByTopicId(
   source?: string,
   sentiment?: ArticleSentiment,
   country?: string,
-  language?: string
+  language?: string,
+  dateFrom?: Date,
+  dateTo?: Date
 ): Promise<number> {
   const conditions = [eq(articleTopic.topicId, topicId), eq(article.isArchived, false)];
 
@@ -250,6 +264,14 @@ export async function countArticlesByTopicId(
 
   if (language) {
     conditions.push(eq(article.language, language));
+  }
+
+  if (dateFrom) {
+    conditions.push(gte(article.publishedAt, dateFrom));
+  }
+
+  if (dateTo) {
+    conditions.push(lt(article.publishedAt, dateTo));
   }
 
   const [result] = await database
@@ -558,13 +580,12 @@ export async function searchArticles(
     offset = 0,
   } = options;
 
-  // Build the full-text search condition
-  // Use plainto_tsquery for more forgiving search (handles phrases without special syntax)
+  // Use ILIKE for language-agnostic substring matching
   const searchCondition = sql`(
-    to_tsvector('english', coalesce(${article.title}, '')) ||
-    to_tsvector('english', coalesce(${article.summary}, '')) ||
-    to_tsvector('english', coalesce(${article.content}, ''))
-  ) @@ plainto_tsquery('english', ${query})`;
+    ${article.title} ILIKE '%' || ${query} || '%'
+    OR ${article.summary} ILIKE '%' || ${query} || '%'
+    OR ${article.content} ILIKE '%' || ${query} || '%'
+  )`;
 
   // Build where conditions array
   const conditions = [searchCondition];
@@ -600,25 +621,17 @@ export async function searchArticles(
 
   const totalCount = Number(countResult?.count || 0);
 
-  // Get articles with relevance ranking
+  // Get matching articles, ordered by date
   const results = await database
-    .select({
-      article,
-      rank: sql<number>`ts_rank(
-        to_tsvector('english', coalesce(${article.title}, '')) ||
-        to_tsvector('english', coalesce(${article.summary}, '')) ||
-        to_tsvector('english', coalesce(${article.content}, '')),
-        plainto_tsquery('english', ${query})
-      )`,
-    })
+    .select()
     .from(article)
     .where(and(...conditions))
-    .orderBy(sql`rank DESC`, desc(article.publishedAt))
+    .orderBy(desc(article.publishedAt))
     .limit(limit)
     .offset(offset);
 
   return {
-    articles: results.map((r) => r.article),
+    articles: results,
     totalCount,
   };
 }

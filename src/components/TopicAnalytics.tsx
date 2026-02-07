@@ -100,6 +100,18 @@ function FilteredArticlesSection({
   filter: FilterState;
   onClear: () => void;
 }) {
+  // For date filter, compute the start/end of the selected day
+  const dateFrom =
+    filter.type === "date" && filter.value ? filter.value : undefined;
+  const dateTo =
+    filter.type === "date" && filter.value
+      ? (() => {
+          const next = new Date(filter.value);
+          next.setDate(next.getDate() + 1);
+          return next.toISOString().split("T")[0];
+        })()
+      : undefined;
+
   const { data, isLoading } = useQuery({
     ...getArticlesByTopicQuery({
       topicId,
@@ -109,6 +121,8 @@ function FilteredArticlesSection({
         filter.type === "sentiment"
           ? (filter.value as ArticleSentiment)
           : undefined,
+      dateFrom,
+      dateTo,
     }),
     enabled: !!filter.type && !!filter.value,
   });
@@ -704,6 +718,10 @@ export function TopicAnalytics({ data, topicId }: TopicAnalyticsProps) {
     label: null,
   });
 
+  const handleDateSelect = (date: string, label: string) => {
+    setFilter({ type: "date", value: date, label });
+  };
+
   const handleSourceSelect = (source: string) => {
     setFilter({ type: "source", value: source, label: source });
   };
@@ -716,35 +734,47 @@ export function TopicAnalytics({ data, topicId }: TopicAnalyticsProps) {
     setFilter({ type: null, value: null, label: null });
   };
 
-  return (
-    <div className="space-y-6">
-      {/* Show filtered articles at the top when a filter is active */}
-      {topicId && filter.type && (
-        <FilteredArticlesSection
-          topicId={topicId}
-          filter={filter}
-          onClear={handleClearFilter}
-        />
-      )}
+  const showFilter = !!(topicId && filter.type);
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <ArticleVolumeChart data={data.articleVolume} />
-        <SentimentDistributionChart
-          data={data.sentimentDistribution}
-          onSentimentSelect={topicId ? handleSentimentSelect : undefined}
-        />
+  return (
+    <div className="flex gap-6">
+      {/* Charts — full width when no filter, shrinks when filter panel is open */}
+      <div className="flex-1 min-w-0 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <ArticleVolumeChart
+            data={data.articleVolume}
+            onDateSelect={topicId ? handleDateSelect : undefined}
+          />
+          <SentimentDistributionChart
+            data={data.sentimentDistribution}
+            onSentimentSelect={topicId ? handleSentimentSelect : undefined}
+          />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <SentimentOverTimeChart data={data.sentimentOverTime} />
+          <SourceDistributionChart
+            data={data.sourceDistribution}
+            onSourceSelect={topicId ? handleSourceSelect : undefined}
+          />
+        </div>
+        {data.countryDistribution && data.countryDistribution.length > 0 && (
+          <CountryDistributionChart data={data.countryDistribution} />
+        )}
+        <TrendingKeywordsCard data={data.trendingKeywords} />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <SentimentOverTimeChart data={data.sentimentOverTime} />
-        <SourceDistributionChart
-          data={data.sourceDistribution}
-          onSourceSelect={topicId ? handleSourceSelect : undefined}
-        />
-      </div>
-      {data.countryDistribution && data.countryDistribution.length > 0 && (
-        <CountryDistributionChart data={data.countryDistribution} />
+
+      {/* Filtered articles panel — sticky on the right side */}
+      {showFilter && topicId && (
+        <div className="hidden xl:block w-[380px] shrink-0">
+          <div className="sticky top-6 max-h-[calc(100vh-3rem)] overflow-y-auto">
+            <FilteredArticlesSection
+              topicId={topicId}
+              filter={filter}
+              onClear={handleClearFilter}
+            />
+          </div>
+        </div>
       )}
-      <TrendingKeywordsCard data={data.trendingKeywords} />
     </div>
   );
 }

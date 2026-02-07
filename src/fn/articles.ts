@@ -119,11 +119,13 @@ export const getArticlesByTopicFn = createServerFn({
       sentiment: z.enum(["positive", "negative", "neutral"]).optional(),
       country: z.string().optional(),
       language: z.string().optional(),
+      dateFrom: z.string().optional(),
+      dateTo: z.string().optional(),
     })
   )
   .middleware([authenticatedMiddleware])
   .handler(async ({ data, context }) => {
-    const { topicId, limit, offset, sortBy, sortOrder, source, sentiment, country, language } = data;
+    const { topicId, limit, offset, sortBy, sortOrder, source, sentiment, country, language, dateFrom, dateTo } = data;
 
     // Verify topic exists and belongs to user
     const topic = await findTopicById(topicId);
@@ -133,6 +135,9 @@ export const getArticlesByTopicFn = createServerFn({
     if (topic.userId !== context.userId) {
       throw new Error("Unauthorized: You can only view your own topics");
     }
+
+    const parsedDateFrom = dateFrom ? new Date(dateFrom) : undefined;
+    const parsedDateTo = dateTo ? new Date(dateTo) : undefined;
 
     const articles = await findArticlesByTopicIdWithOptions({
       topicId,
@@ -144,9 +149,11 @@ export const getArticlesByTopicFn = createServerFn({
       sentiment: sentiment as ArticleSentiment | undefined,
       country,
       language,
+      dateFrom: parsedDateFrom,
+      dateTo: parsedDateTo,
     });
 
-    const totalCount = await countArticlesByTopicId(topicId, source, sentiment as ArticleSentiment | undefined, country, language);
+    const totalCount = await countArticlesByTopicId(topicId, source, sentiment as ArticleSentiment | undefined, country, language, parsedDateFrom, parsedDateTo);
 
     return {
       articles,

@@ -27,6 +27,8 @@ export interface GetArticlesByTopicParams {
   source?: string;
   sentiment?: ArticleSentiment;
   country?: string;
+  dateFrom?: string;
+  dateTo?: string;
 }
 
 export const getArticlesByTopicQuery = (params: GetArticlesByTopicParams) =>
@@ -41,6 +43,8 @@ export const getArticlesByTopicQuery = (params: GetArticlesByTopicParams) =>
       params.source,
       params.sentiment,
       params.country,
+      params.dateFrom,
+      params.dateTo,
     ],
     queryFn: () => getArticlesByTopicFn({ data: params }),
   });

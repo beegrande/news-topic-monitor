@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import {
   Home,
@@ -37,9 +37,8 @@ export const Route = createFileRoute("/search")({
 
 function SearchPage() {
   const { q } = Route.useSearch();
-  const navigate = useNavigate();
 
-  // Initialize from URL param
+  // Initialize from URL param (only on mount)
   const [searchQuery, setSearchQuery] = useState(q || "");
   const [debouncedQuery, setDebouncedQuery] = useState(q || "");
   const [selectedSource, setSelectedSource] = useState<string | undefined>();
@@ -47,17 +46,6 @@ function SearchPage() {
   const [dateFrom, setDateFrom] = useState<string>("");
   const [dateTo, setDateTo] = useState<string>("");
   const [offset, setOffset] = useState(0);
-
-  // Sync from URL param only on initial load or external navigation
-  useEffect(() => {
-    const urlQuery = q || "";
-    if (urlQuery !== searchQuery) {
-      setSearchQuery(urlQuery);
-      setDebouncedQuery(urlQuery);
-    }
-    // Only run when q changes from URL navigation, not from our own updates
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q]);
 
   // Debounce search query
   useEffect(() => {
@@ -67,20 +55,6 @@ function SearchPage() {
     }, 300);
     return () => clearTimeout(timer);
   }, [searchQuery]);
-
-  // Sync URL when debounced query changes (user typing)
-  useEffect(() => {
-    const newQ = debouncedQuery || undefined;
-    const currentQ = q || undefined;
-    if (newQ !== currentQ) {
-      navigate({
-        to: "/search",
-        search: { q: newQ },
-        replace: true,
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedQuery]);
 
   // Fetch search results
   const {

@@ -30,6 +30,8 @@ import {
   Download,
   Upload,
   Zap,
+  ExternalLink,
+  X,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "~/components/ui/button";
@@ -52,6 +54,8 @@ import {
   DialogTitle,
 } from "~/components/ui/dialog";
 import { useState, useMemo } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getArticlesByTopicQuery } from "~/queries/articles";
 import type { Topic } from "~/db/schema";
 
 export const Route = createFileRoute("/topics")({
@@ -72,6 +76,7 @@ function TopicsPage() {
   const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
   const [createChildParentId, setCreateChildParentId] = useState<string | null>(null);
   const [createChildDialogOpen, setCreateChildDialogOpen] = useState(false);
+  const [selectedTopicId, setSelectedTopicId] = useState<string | null>(null);
 
   const handleUseTemplate = (template: TopicTemplate) => {
     setSelectedTemplate(template);
@@ -180,6 +185,25 @@ function TopicsPage() {
     status: "active" | "paused" | "archived"
   ) => {
     setStatusMutation.mutate({ id: topic.id, status });
+  };
+
+  // Fetch articles for the selected topic
+  const { data: selectedArticlesData, isLoading: articlesLoading } = useQuery({
+    ...getArticlesByTopicQuery({
+      topicId: selectedTopicId || "",
+      limit: 20,
+      sortBy: "date",
+      sortOrder: "desc",
+    }),
+    enabled: !!selectedTopicId,
+  });
+
+  const selectedTopicName = selectedTopicId
+    ? allTopics.find((t) => t.id === selectedTopicId)?.name
+    : null;
+
+  const handleTopicClick = (topicId: string) => {
+    setSelectedTopicId((prev) => (prev === topicId ? null : topicId));
   };
 
   const clearSearch = () => {
@@ -333,7 +357,7 @@ function TopicsPage() {
           </div>
         </div>
 
-        {/* Topics List */}
+        {/* Topics List + Articles Panel */}
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Array.from({ length: 6 }).map((_, i) => (
@@ -349,7 +373,8 @@ function TopicsPage() {
             ))}
           </div>
         ) : topics.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex gap-6">
+          <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 content-start">
             {topics.map(({ topic, depth }) => {
               const hasChildren = topic.children && topic.children.length > 0;
               const isExpanded = expandedTopics.has(topic.id);
@@ -357,8 +382,9 @@ function TopicsPage() {
               return (
                 <div
                   key={topic.id}
-                  className="group bg-card border rounded-lg p-6 hover:border-primary/50 transition-all"
+                  className={`group bg-card border rounded-lg p-6 hover:border-primary/50 transition-all cursor-pointer ${selectedTopicId === topic.id ? "border-primary ring-1 ring-primary/30" : ""}`}
                   style={{ marginLeft: `${depth * 1.5}rem` }}
+                  onClick={() => handleTopicClick(topic.id)}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
@@ -525,6 +551,93 @@ function TopicsPage() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Articles panel — sticky on the right side */}
+          {selectedTopicId && (
+            <div className="hidden xl:block w-[400px] shrink-0">
+              <div className="sticky top-6 max-h-[calc(100vh-3rem)] overflow-y-auto">
+                <div className="bg-card border border-primary/50 rounded-lg">
+                  <div className="flex items-center justify-between p-4 border-b">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Newspaper className="h-5 w-5 text-primary shrink-0" />
+                      <h3 className="font-semibold truncate">
+                        {selectedTopicName}
+                      </h3>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedTopicId(null);
+                      }}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                  <div className="p-4">
+                    {articlesLoading ? (
+                      <div className="space-y-3">
+                        {[1, 2, 3].map((i) => (
+                          <div
+                            key={i}
+                            className="h-16 bg-muted rounded animate-pulse"
+                          />
+                        ))}
+                      </div>
+                    ) : selectedArticlesData?.articles &&
+                      selectedArticlesData.articles.length > 0 ? (
+                      <div className="space-y-3">
+                        {selectedArticlesData.articles.map((article) => (
+                          <a
+                            key={article.id}
+                            href={article.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block p-3 rounded-lg border bg-card hover:bg-accent transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex-1 min-w-0">
+                                <h4 className="font-medium text-sm line-clamp-2">
+                                  {article.title}
+                                </h4>
+                                <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
+                                  <span>{article.source}</span>
+                                  <span>&middot;</span>
+                                  <span>
+                                    {article.publishedAt
+                                      ? new Date(
+                                          article.publishedAt
+                                        ).toLocaleDateString()
+                                      : "Unknown date"}
+                                  </span>
+                                </div>
+                              </div>
+                              <ExternalLink className="h-4 w-4 text-muted-foreground shrink-0" />
+                            </div>
+                          </a>
+                        ))}
+                        <Link
+                          to="/topic/$id/articles"
+                          params={{ id: selectedTopicId }}
+                          className="block text-center text-sm text-primary hover:underline pt-2"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View all articles
+                        </Link>
+                      </div>
+                    ) : (
+                      <p className="text-sm text-muted-foreground text-center py-4">
+                        No articles yet for this topic
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           </div>
         ) : (
           <div className="text-center py-20">
